@@ -1,0 +1,26 @@
+.header {
+  background: rgba(255, 255, 255, 0.7);
+  /*border-bottom:1px solid rgba(0, 0, 0, 0.05);*/
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.header__logo {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #111;
+  outline: none;
+}
