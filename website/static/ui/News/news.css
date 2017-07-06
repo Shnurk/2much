@@ -53,7 +53,7 @@ display: none;
 }
 
 .news__item:hover {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .news__itemImage {

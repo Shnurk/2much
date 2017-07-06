@@ -1,0 +1,51 @@
+.contact {
+  width: 100%;
+  margin-top: 62px;
+  position: relative;
+}
+
+.contact:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.contact__card {
+  width: 400px;
+  margin: 250px auto 0;
+  background: #fff;
+  padding: 100px 50px;
+  text-align: center;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #111;
+
+}
+
+.contact__cardTitle {
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.contact__phone {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+.contact__bang {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+}
+
+
