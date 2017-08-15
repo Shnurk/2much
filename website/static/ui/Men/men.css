@@ -2,6 +2,10 @@
   margin: 0 10px;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .models {
   margin-top: 80px;
   display: flex;
@@ -21,6 +25,7 @@
   height: 350px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -40,7 +45,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   color: #111;
   align-items: center;
   justify-content: center;
@@ -64,14 +69,14 @@
 }
 
 
-.model__name {
+.models__name {
   font-family: sans-serif;
   width: 250px;
-  text-align: left;
   margin-left: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;
   font-weight: 100;
   font-size: 14px;
   color: #111;
+  text-align: left;
 }

@@ -1,0 +1,25 @@
+.about {
+}
+
+
+.about__title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+  letter-spacing: .5px;
+}
+
+
+.about__container {
+  width: 600px;
+  padding: 40px;
+  border:1px solid #505050;
+  border-radius: 2px;
+}
+
+
+.about__text {
+  font-family: sans-serif;
+  font-weight: 100;
+  line-height: 140%;
+}

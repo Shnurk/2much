@@ -6,7 +6,7 @@ function Header() {
         <a class="menu__item" href="/women">Women</a>
         <a class="menu__item" href="/news">News</a>
       </div>
-      <a class="header__logo" href="/">2much</a>
+      <a class="header__logo" href="/">2Much</a>
       <div class="menu">
         <a class="menu__item" href="/about">About</a>
         <a class="menu__item" href="/contact">Contact</a>

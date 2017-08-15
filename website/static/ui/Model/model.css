@@ -1,4 +1,109 @@
-.model__img {
-  margin-top: 150px;
-  margin-left: 20px;
+.model {
+  margin: 120px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.model__name {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  letter-spacing: .5px;
+}
+
+.model__firstname {
+  margin-right: 10px;
+  font-size: 25px;
+  font-weight: 600;
+
+}
+
+.model__lastname {
+  font-size: 25px;
+  font-weight: 600;
+
+}
+
+.model__menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.model__menuItem {
+  outline: none;
+  text-decoration: none;
+  color: #111;
+  padding: 10px;
+}
+
+.model__menuItem:after {
+  content: '';
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 2px;
+  width: 5px;
+  height: 5px;
+  background: #505050;
+  border-radius: 50%;
+}
+
+.model__menuItem:last-child:after {
+display: none;
+}
+
+.menu__active {
+  color: #f8cc9d;
+}
+
+.model__menuItem:hover {
+  color: #f8cc9d;
+}
+
+.model__book {
+  display: flex;
+}
+
+.model__info {
+  width: 398px;
+  height: 548px;
+  border: 1px solid #111;
+  border-radius: 2px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+.model__photos {
+  display: flex;
+}
+
+.model__img {
+  height: 550px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.model__measures {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  display: flex;
+  margin-top: 15px;
+}
+
+.model__measure {
+  margin: 0 20px;
+  display: flex;
+}
+
+.measure__title {
+  margin-right: 10px;
+}
+

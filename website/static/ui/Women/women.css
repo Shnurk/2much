@@ -21,6 +21,7 @@
   height: 350px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -64,7 +65,7 @@
 }
 
 
-.model__name {
+.models__name {
   font-family: sans-serif;
   width: 250px;
   text-align: left;

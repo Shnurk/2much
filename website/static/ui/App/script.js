@@ -1,8 +1,11 @@
 var img = 1;
-var timer = setInterval(showNextImg, 3000);
 var RIGHT_ARROW = 39;
 var LEFT_ARROW = 37;
 var intro = document.querySelector('.intro');
+
+if (location.pathname === '/') {
+  var timer = setInterval(showNextImg, 3000);
+}
 
 function showNextImg() {
   intro.classList.remove('intro_' + img);
@@ -36,11 +39,11 @@ function onPrevPress() {
   killTimer();
 }
 
-window.onkeydown = function(e) {
+window.addEventListener('keydown', function(e) {
   if (e.keyCode == RIGHT_ARROW) {
     onNextPress();
   }
   if (e.keyCode == LEFT_ARROW) {
     onPrevPress();
   }
-}
+})

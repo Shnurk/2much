@@ -1,0 +1,50 @@
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.book__name {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  letter-spacing: .5px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
+.book__slider {
+  display: flex;
+}
+
+
+.book__params {
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  display: flex;
+  margin-top: 15px;
+}
+
+
+.book__param {
+  margin: 0 20px;
+  display: flex;
+}
+
+
+.book__paramTitle {
+
+}
+
+
+.book__paramValue {
+
+}
+
+.book .menu {
+  margin-top: 7px;
+  margin-bottom: 10px;
+}

@@ -1,5 +1,5 @@
 .footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #efefef;
   width: 66%;
   margin: 0 auto;
   margin-top: 100px;
@@ -21,9 +21,10 @@
 }
 
 .socials__image {
+  outline: none;
   width: 20px;
   padding: 20px;
-  opacity: 0.75;
+  opacity: 0.6;
 }
 
 .socials__image:hover {

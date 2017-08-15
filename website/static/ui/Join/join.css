@@ -184,18 +184,16 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 10px 20px;
-  width: 110px;
-  background: #f8cc9d;
+  padding: 15px 30px;
+  background: #e4ddda;
   border: none;
-  border-radius: 2px;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 1.5px;
   outline: none;
   cursor: pointer;
   color: #111;
-  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.13);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.07);
 }
 
 .button__submit:hover {

@@ -8,7 +8,7 @@ function Women() {
             <div class="model__measures">82 | 65 | 88</div>
           </div>
         </div>
-        <div class="model__name">Nastya G</div>
+        <div class="models__name">Nastya G</div>
       </a>
       <a class="models__item" href="/model">
         <div class="model__card" style="background-image: url(images/woman5.jpg)">
@@ -17,7 +17,7 @@ function Women() {
             <div class="model__measures">82 | 65 | 88</div>
           </div>
         </div>
-        <div class="model__name">Vika B</div>
+        <div class="models__name">Vika B</div>
       </a>
       <a class="models__item" href="/model">
         <div class="model__card" style="background-image: url(images/woman6.jpg)">
@@ -26,7 +26,7 @@ function Women() {
             <div class="model__measures">82 | 65 | 88</div>
           </div>
         </div>
-        <div class="model__name">Stacy</div>
+        <div class="models__name">Stacy</div>
       </a>
       <a class="models__item" href="/model">
         <div class="model__card" style="background-image: url(images/woman7.jpg)">
@@ -35,7 +35,7 @@ function Women() {
             <div class="model__measures">82 | 65 | 88</div>
           </div>
         </div>
-        <div class="model__name">Sasha W</div>
+        <div class="models__name">Sasha W</div>
       </a>
       <a class="models__item" href="/model">
         <div class="model__card" style="background-image: url(images/woman9.jpg)">
@@ -44,7 +44,7 @@ function Women() {
             <div class="model__measures">82 | 65 | 88</div>
           </div>
         </div>
-        <div class="model__name">Polya R</div>
+        <div class="models__name">Polya R</div>
       </a>
   </div>
   `
