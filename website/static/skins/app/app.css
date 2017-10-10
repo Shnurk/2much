@@ -1,6 +1,28 @@
-body {
+.app__page {
   margin: 0;
   width: 100%;
   height: 100%;
   background: none;
+}
+
+
+.app__header {
+  margin-bottom: 63px;
+}
+
+
+.app__content {
+  display: flex;
+  justify-content: center;
+  padding: 75px 0 100px;
+  min-height: 400px;
+}
+
+.app__content > * {
+  margin-bottom: auto;
+}
+
+
+.app__footer {
+
 }

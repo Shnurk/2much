@@ -7,13 +7,17 @@ var Footer = require('../footer/Footer')
 var Header = require('../header/Header')
 var Intro = require('../intro/Intro')
 var Join = require('../join/Join')
-var Layout = require('../layout/Layout')
 var Menu = require('../menu/Menu')
 var Model = require('../model/Model')
 var News = require('../news/News')
 var Slider = require('../slider/Slider')
 
-function App(url) {
+/**
+ * props = {
+ *   content: HTML
+ * }
+ */
+function App(props) {
   var ivan = db.Models[0]
   var kolya = db.Models[1]
 
@@ -22,36 +26,38 @@ function App(url) {
 
   return `
     <!doctype html>
-    <head>
-      <title>2Much</title>
-      <meta charset="utf-8" />
-      <link rel="shortcut icon" href="fav.jpg" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" />
-      <link rel="stylesheet" href="/skins/app/app.css" />
+    <html class="app">
+      <head>
+        <title>2Much</title>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="fav.jpg" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" />
+        <link rel="stylesheet" href="/skins/app/app.css" />
 
-      <link rel="stylesheet" href="/skins/about/about.css" />
-      <link rel="stylesheet" href="/skins/article/article.css" />
-      <link rel="stylesheet" href="/skins/articlePreview/articlePreview.css" />
-      <link rel="stylesheet" href="/skins/book/book.css" />
-      <link rel="stylesheet" href="/skins/contact/contact.css" />
-      <link rel="stylesheet" href="/skins/footer/footer.css" />
-      <link rel="stylesheet" href="/skins/header/header.css" />
-      <link rel="stylesheet" href="/skins/intro/intro.css" />
-      <link rel="stylesheet" href="/skins/join/join.css" />
-      <link rel="stylesheet" href="/skins/layout/layout.css" />
-      <link rel="stylesheet" href="/skins/menu/menu.css" />
-      <link rel="stylesheet" href="/skins/model/model.css" />
-      <link rel="stylesheet" href="/skins/news/news.css" />
-      <link rel="stylesheet" href="/skins/slider/slider.css" />
-    </head>
-    <body>
-      ${Layout({
-        content: 'CONTENT',
-      })}
-      <script src="/skins/intro/Intro_slider.js"></script>
-      <script src="/skins/join/photo_upload_preview.js"></script>
-      <script src="/skins/slider/Slider_0.js"></script>
-    </body>
+        <link rel="stylesheet" href="/skins/about/about.css" />
+        <link rel="stylesheet" href="/skins/article/article.css" />
+        <link rel="stylesheet" href="/skins/articlePreview/articlePreview.css" />
+        <link rel="stylesheet" href="/skins/book/book.css" />
+        <link rel="stylesheet" href="/skins/contact/contact.css" />
+        <link rel="stylesheet" href="/skins/footer/footer.css" />
+        <link rel="stylesheet" href="/skins/header/header.css" />
+        <link rel="stylesheet" href="/skins/intro/intro.css" />
+        <link rel="stylesheet" href="/skins/join/join.css" />
+        <link rel="stylesheet" href="/skins/menu/menu.css" />
+        <link rel="stylesheet" href="/skins/model/model.css" />
+        <link rel="stylesheet" href="/skins/news/news.css" />
+        <link rel="stylesheet" href="/skins/slider/slider.css" />
+      </head>
+      <body class="app__page">
+        <div class="app__header">${Header()}</div>
+        <div class="app__content">${props.content}</div>
+        <div class="app__footer">${Footer()}</div>
+
+        <script src="/skins/intro/Intro_slider.js"></script>
+        <script src="/skins/join/photo_upload_preview.js"></script>
+        <script src="/skins/slider/Slider_0.js"></script>
+      </body>
+    </html>
   `;
 }
 
