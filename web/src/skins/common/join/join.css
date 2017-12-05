@@ -1,0 +1,196 @@
+.join {
+  width: 970px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 2px;
+  border: 1px solid #111;
+}
+
+.titleBlock {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  font-family: 'Playfair Display', serif;
+}
+
+.join__titleRequirements {
+  margin: 30px 0 20px;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.join__requirements {
+  margin: 20px 0;
+  color: #111;
+  font-size: 18px;
+  font-weight: 100;
+  font-family: sans-serif;
+  line-height: 140%;
+  position: relative;
+}
+
+.join__blocks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.join__measureBlock {
+}
+
+.join__leftBlock {
+}
+
+.join__infoLine {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.join__measure {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.join__infoLine_socials {
+}
+
+.join__rightBlock .join__infoLine {
+}
+
+.join__input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #dedede;
+  width: 250px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.join__inputGender {
+  outline: none;
+  display: inline-block;
+  border: none;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+  margin-right: 10px;
+  margin-left: 0;
+  cursor: pointer;
+}
+
+.gender {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 100;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.join__titleLine {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 200;
+  width: 90px;
+  text-align: left;
+}
+
+
+.join__inputNumber {
+  width: 70px;
+  display: inline;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.uploadPhotos {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload__photo {
+  width: 23%;
+  position: relative;
+  border: 1px solid #111;
+  border-radius: 2px;
+  overflow: hidden;
+
+}
+
+.upload__imgSample {
+  display: block;
+  width: 100%;
+}
+
+.upload__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #111;
+  transition: background 0.1s linear;
+  outline: none;
+}
+
+
+
+.upload__input {
+  outline: none;
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  top: -50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.upload__imagePreview {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.upload__photo:hover .upload__button {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+
+.button__submit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 15px 30px;
+  background: #e4ddda;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1.5px;
+  outline: none;
+  cursor: pointer;
+  color: #111;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.07);
+}
+
+.button__submit:hover {
+  color: #fff;
+}

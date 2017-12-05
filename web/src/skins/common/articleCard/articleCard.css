@@ -1,0 +1,32 @@
+.articleCard {
+  text-decoration: none;
+  color: #111;
+  padding: 10px;
+  border: 1px solid #505050;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  height: 500px;
+  width: 380px;
+}
+.articleCard:hover {
+  opacity: 0.9;
+}
+
+
+.articleCard__photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+
+.articleCard__title {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  letter-spacing: 0.5px;
+}

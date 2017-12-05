@@ -1,0 +1,10 @@
+.page {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+
+.page__body {
+  margin: 0;
+}

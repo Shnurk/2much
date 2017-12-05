@@ -1,0 +1,29 @@
+{
+  "name": "2much_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "schema.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon --inspect src/start.js",
+    "prod": "NODE_ENV=prod nodemon --inspect src/start.js"
+  },
+  "author": "kriscos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "connect-multiparty": "^2.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-resumablejs": "^0.3.3",
+    "image-size": "^0.6.1",
+    "mongodb": "^2.2.33",
+    "multer": "^1.3.0",
+    "nanoid": "^1.0.1",
+    "serve-static": "^1.13.1",
+    "sharp": "^0.18.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}

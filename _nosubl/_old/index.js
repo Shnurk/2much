@@ -1,6 +1,6 @@
 var connect = require('connect')
-// var App = require('./static/ui/app/App')
-var App = require('./static/skins/app/App')
+var App = require('./static/ui/app/App')
+// var App = require('./static/skins/app/App')
 var serveStatic = require('serve-static')
 var pdf = require('html-pdf')
 var ObjectID = require('mongodb').ObjectID
@@ -22,9 +22,11 @@ MongoClient.connect(url, function(err, db) {
     var Articles = db.collection('articles');
 
     Articles.find().toArray(function(err, items) {
-      Articles.find({ _id: items[1].articleId }).toArray(function(err, items) {
-        console.log(items);
-      })
+      if (items.length) {
+        Articles.find({ _id: items[1].articleId }).toArray(function(err, items) {
+          console.log(items);
+        })
+      }
     });
   }
 });

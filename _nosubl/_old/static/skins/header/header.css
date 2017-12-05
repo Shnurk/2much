@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+
+.header__logo {
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: absolute;
+  text-decoration: none;
+  color: #111;
+  outline: none;
+}
+
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  z-index: 2;
+}
+
+
+.header__menuItem {
+  margin: 12px;
+  outline: none;
+  font-weight: 300;
+  text-decoration: none;
+  color: #111;
+  outline: none;
+}
+.header__menuItem:hover {
+  opacity: 0.7;
+}
