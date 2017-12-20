@@ -10,24 +10,35 @@
 }
 
 
-.contact__cardTitle {
-  font-size: 25px;
-  font-weight: bold;
+.contact__title {
+  font-size: 22px;
+  font-weight: 400;
+  font-family: sans-serif;
 }
 
 
-.contact__phone {
+.contact__name {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 100;
   font-family: sans-serif;
 }
 
 
-.contact__bang {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  right: -50px;
-  bottom: -50px;
+.contact__job {
+  margin-top: 20px 0;
+  font-size: 16px;
+  font-weight: 100;
+  font-family: sans-serif;
+  opacity: .7;
 }
+
+
+.contact__phone {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+
+

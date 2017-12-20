@@ -1,6 +1,6 @@
 var connect = require('connect')
-// var App = require('./static/ui/app/App')
-var App = require('./static/skins/app/App')
+var App = require('./static/ui/app/App')
+//  var App = require('./static/skins/app/App')
 var serveStatic = require('serve-static')
 var pdf = require('html-pdf')
 var ObjectID = require('mongodb').ObjectID

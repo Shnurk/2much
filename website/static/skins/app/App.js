@@ -28,7 +28,7 @@ function App(props) {
     <!doctype html>
     <html class="app">
       <head>
-        <title>2Much</title>
+        <title>Against</title>
         <meta charset="utf-8" />
         <link rel="shortcut icon" href="fav.jpg" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display" />

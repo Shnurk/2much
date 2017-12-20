@@ -54,7 +54,7 @@ function App(url) {
   return `
     <!doctype html>
     <head>
-      <title>2Much</title>
+      <title>Against</title>
       <meta charset="utf-8" />
       <link rel="shortcut icon" href="fav.jpg" />
       <link rel="stylesheet"  href="/ui/App/app.css" />
