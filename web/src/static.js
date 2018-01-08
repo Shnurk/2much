@@ -19,8 +19,8 @@ var data = {
     '/skins/base/Brick/Brick.js',
 
     '/skins/skeleton/Footer/Footer.js',
-    '/skins/skeleton/header/header.js',
-    '/skins/skeleton/layout/layout.js',
+    '/skins/skeleton/Header/Header.js',
+    '/skins/skeleton/Layout/Layout.js',
     '/skins/skeleton/Page/Page.js',
 
     '/skins/common/about/about.js',
@@ -57,9 +57,9 @@ var data = {
     '/lib/dollarselector.js',
     '/lib/resumable/resumable.js',
 
-    '/skins/skeleton/footer/footer.css',
-    '/skins/skeleton/header/header.css',
-    '/skins/skeleton/layout/layout.css',
+    '/skins/skeleton/Footer/Footer.css',
+    '/skins/skeleton/Header/Header.css',
+    '/skins/skeleton/Layout/Layout.css',
     '/skins/skeleton/Page/Page.css',
     '/skins/common/News/News.css',
     '/skins/common/Slider/slider.css',
