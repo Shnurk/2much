@@ -5,14 +5,14 @@
 
 
 ## Connect with keys
+## (Add local `id_rsa.pub` to remote `authorized_keys`)
 
-// Add local `id_rsa.pub` to remote `authorized_keys`
-> less ~/.ssh/id_rsa.pub
-> // copy
+> [local] less ~/.ssh/id_rsa.pub
+> [copy]
 > ssh imkost@imkost.com
 > mkdir .ssh
 > nano .ssh/authorized_keys
-> // paste
+> [paste]
 
 
 ## Install build tools
@@ -31,7 +31,7 @@
 
 ## Install Node.js
 
-> curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+> curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 > sudo apt-get install -y nodejs
 
 
@@ -42,26 +42,30 @@
 
 ## Install MongoDB
 
+// Install
 > sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 > echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 > sudo apt-get update
 > sudo apt-get install -y mongodb-org
 
+// Config engine
+> sudo nano /etc/mongod.conf
+> `storage` section should have `engine: mmapv1`
 
 ## MongoDB notes
 
-// `mongodb` user is created
-// `/var/lib/mongodb` for data
-// `/var/log/mongodb` for logs
-// `/etc/mongod.conf` for config
+`mongodb` user is created
+`/var/lib/mongodb` for data
+`/var/log/mongodb` for logs
+`/etc/mongod.conf` for config
 
-// Launch
+Launch:
 > sudo service mongod start
 > sudo service mongod stop
 > sudo service mongod restart
 
-// Use `engine: mmapv1` in config.
-// `wiredTarget` is for `XFS` or `EXT4` file systems.
+Use `engine: mmapv1` in config.
+`wiredTarget` is for `XFS` or `EXT4` file systems.
 
 
 ## Create MongoDB users
@@ -76,7 +80,7 @@
   })
 
 // Enable authorization
-> sudo service mongodb stop
+> sudo service mongod stop
 > sudo nano /etc/mongod.conf
 ```
 security:
@@ -104,3 +108,32 @@ security:
 
 > sudo chown imkost /usr/lib/node_modules/
 > sudo npm install pm2 -g
+
+
+## Install Passenger (Ubuntu 16.04 LTC)
+// for other systems check out https://www.phusionpassenger.com/library/install/standalone/install/oss/
+
+> sudo apt-get install -y dirmngr gnupg
+> sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
+> sudo apt-get install -y apt-transport-https ca-certificates
+> sudo sh -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
+> sudo apt-get update
+> sudo apt-get install -y passenger
+> sudo apt-get install -y nginx-extras
+
+
+## Config Passenger
+
+> sudo nano /etc/nginx/nginx.conf
+> uncomment `# include /etc/nginx/passenger.conf;`
+> sudo service nginx restart
+
+
+## Add rights for /opt
+
+> sudo chown imkost:imkost /opt
+
+
+## Generate id_rsa.pub
+
+> ssh-keygen
