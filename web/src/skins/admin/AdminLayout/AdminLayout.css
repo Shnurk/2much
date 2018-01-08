@@ -1,0 +1,18 @@
+.AdminLayout {
+  font-weight: 400;
+}
+
+
+.AdminLayout__sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background: #efefef;
+}
+
+
+.AdminLayout__content {
+  margin: 20px 20px 20px 220px;
+}

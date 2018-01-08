@@ -1,0 +1,171 @@
+.AdminMenu {
+
+}
+
+
+.AdminMenu__item {
+  display: block;
+  padding: 15px;
+}
+
+
+.AdminForm__body {
+  display: flex;
+}
+
+.AdminForm__column {
+}
+.AdminForm__column:first-child {
+  width: 40%;
+  min-width: 300px;
+  margin-right: 15px;
+}
+.AdminForm__column:last-child {
+  flex-grow: 1;
+}
+
+.AdminForm__section {
+  display: block;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  margin-bottom: 15px;
+  padding: 15px 15px 15px;
+}
+
+.AdminForm__title {
+  font-size: 15px;
+}
+
+.AdminForm__content {
+  margin-top: 7px;
+}
+
+.AdminForm__input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 2px 4px;
+  width: 200px;
+  outline: none;
+  border: 1px solid #ddd;
+}
+
+.AdminForm__row {
+  display: flex;
+  align-items: center;
+  margin-top: 9px;
+}
+
+.AdminForm__label {
+  width: 55px;
+  font-size: 13px;
+}
+
+.AdminForm__section_upload .AdminForm__title {
+  cursor: pointer;
+}
+
+.AdminForm__section_upload .AdminForm__content {
+  margin-left: -5px;
+  margin-right: -5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.AdminForm__section_upload .PhotoLoad {
+  margin: 1px;
+}
+
+.AdminForm__footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.AdminForm__save {
+  font-family: inherit;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background: #0087de;
+  padding: 8px 21px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.AdminForm__delete {
+  margin-right: 20px;
+  font-family: inherit;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  color: white;
+  background: red;
+  padding: 8px 21px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+
+.AdminForm__saved {
+  display: none;
+}
+
+
+
+
+
+
+.AdminList {
+
+}
+
+.AdminList__new {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: #13b103;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.AdminList__item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  width: 270px;
+}
+.AdminList__item:hover {
+  background: #a4cbff2b;
+  border-radius: 2px;
+}
+
+.AdminList__itemPhoto {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #efefef;
+  border-radius: 2px;
+}
+
+.AdminList__itemName {
+
+}
+
+
+
+.AdminForm__row:last-child .AdminForm__selectRemove {
+  display: none;
+}
+.AdminForm__select {
+  cursor: pointer;
+}
+.AdminForm__selectRemove {
+  cursor: pointer;
+  padding: 0 7px;
+  user-select: none;
+}
