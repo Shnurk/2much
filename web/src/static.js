@@ -18,7 +18,7 @@ var data = {
 
     '/skins/base/Brick/Brick.js',
 
-    '/skins/skeleton/footer/footer.js',
+    '/skins/skeleton/Footer/Footer.js',
     '/skins/skeleton/header/header.js',
     '/skins/skeleton/layout/layout.js',
     '/skins/skeleton/Page/Page.js',
