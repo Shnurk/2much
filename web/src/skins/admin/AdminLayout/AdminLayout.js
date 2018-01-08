@@ -1,11 +1,11 @@
 (() => {
 
-const AdminMenu = g.skin.AdminMenu
+const $ = global.skin.Brick.render
+const AdminMenu = global.skin.AdminMenu
 
-g.skin.AdminLayout = {
+global.skin.AdminLayout = {
   render: renderAdminLayout
 }
-
 
 /**
  * props = {
@@ -13,16 +13,16 @@ g.skin.AdminLayout = {
  * }
  */
 function renderAdminLayout (props, children) {
-  return q.html`
-    <div class="AdminLayout">
-      <div class="AdminLayout__sidebar">
-        ${AdminMenu.render({ menu: props.menu })}
-      </div>
-      <div class="AdminLayout__content">
-        ${children}
-      </div>
-    </div>
-  `
+  return (
+    $('AdminLayout', [
+      $('AdminLayout__sidebar', (
+        AdminMenu.render({ menu: props.menu })
+      )),
+      $('AdminLayout__content', (
+        children
+      ))
+    ])
+  )
 }
 
 })()

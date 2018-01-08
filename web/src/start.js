@@ -1,8 +1,3 @@
-global.env = process.env.NODE_ENV
-global.isDev = env === 'dev'
-global.isProd = env === 'prod'
-global.requireSrc = requireSrc
-
 const path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -11,41 +6,38 @@ const serveStatic = require('serve-static')
 const connectMongo = require('connect-mongo')
 const multipart = require('connect-multiparty')
 
+const env = process.env.NODE_ENV
+const port = process.env.PORT || 3000
+const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/twomuch'
+
+global.requireSrc = requireSrc
+global.env = env
+global.isDev = env === 'development'
+global.isProd = env === 'production'
+
 const static = requireSrc('/static')
-static.getServer().forEach(requireSrc)
+static.server().forEach(requireSrc)
 const db = requireSrc('/db')
 const MainCtrl = requireSrc('/ctrls/MainCtrl')
 const AdminCtrl = requireSrc('/ctrls/AdminCtrl')
 const UploadCtrl = requireSrc('/ctrls/UploadCtrl')
 
 const config = {
-  dev: {
-    port: 3000,
-    mongo: {
-      url: 'mongodb://localhost:27017/twomuch',
-      secret: '2much_secret'
-    },
-    public: {
+  port,
+  mongoUrl,
+  public: isDev
+    ? {
       '/': './src/',
       '/media': './media/'
     }
-  },
-
-  prod: {
-    port: 3000,
-    mongo: {
-      url: 'mongodb://localhost:27017/twomuch',
-      secret: '2much_secret'
-    },
-    public: {
+    : {
       '/build': './src/build/'
     }
-  }
 }
 
 ;(function main () {
-  startServer(config[env])
   handleAsyncAwaitErrors()
+  startServer(config)
 })()
 
 
@@ -65,7 +57,7 @@ async function startServer (params) {
   })
 
   // Connect to Mongo
-  await db.connect(params.mongo.url)
+  await db.connect(params.mongoUrl)
 
   // Manage app
   UploadCtrl.manage(app)

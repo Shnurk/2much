@@ -1,9 +1,10 @@
-/* global q */
-/* global skin */
-
 ;(() => {
 
-skin.layout = {
+const $ = global.skin.Brick.render
+const Header = global.skin.header
+const Footer = global.skin.footer
+
+global.skin.layout = {
   render: renderLayout
 }
 
@@ -12,31 +13,20 @@ skin.layout = {
  * props = {
  *   content: HTML
  *   noFooter: [Boolean]
+ *   noPadding: [Boolean]
  * }
  */
 function renderLayout (props) {
   const withFooter = !props.noFooter
+  const noPadding = props.noPadding ? 'Layout_noPadding' : ''
 
-  return q.html`
-    <div class="layout">
-      <div class="layout__header">
-        ${skin.header.render()}
-      </div>
-      <div class="layout__content">
-        ${props.content}
-      </div>
-      ${withFooter && renderFooter()}
-    </div>
-  `
-}
-
-
-function renderFooter () {
-  return q.html`
-    <div class="layout__footer">
-      ${skin.footer.render()}
-    </div>
-  `
+  return (
+    $(`Layout ${noPadding}`, [
+      $('Layout__header', Header.render()),
+      $('Layout__content', props.content),
+      withFooter && $('Layout__footer', Footer.render())
+    ])
+  )
 }
 
 })()

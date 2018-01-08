@@ -1,10 +1,12 @@
-.page {
+.Page {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
+  height: 100%;
+  min-height: 100%;
 }
 
-
-.page__body {
+.Page__body {
   margin: 0;
+  height: 100%;
 }

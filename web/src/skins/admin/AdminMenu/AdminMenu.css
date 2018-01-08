@@ -155,3 +155,17 @@
 .AdminList__itemName {
 
 }
+
+
+
+.AdminForm__row:last-child .AdminForm__selectRemove {
+  display: none;
+}
+.AdminForm__select {
+  cursor: pointer;
+}
+.AdminForm__selectRemove {
+  cursor: pointer;
+  padding: 0 7px;
+  user-select: none;
+}

@@ -15,6 +15,7 @@ function initUpload () {
   r.assignDrop($$('.DropZone'))
 
   r.on('fileAdded', (file, e) => {
+    console.log('added')
     r.upload()
     const $dropZone = e.target.closest('.DropZone')
     $dropZone.$('.DropZone__photos').insertAdjacentHTML('beforeend', (
@@ -23,11 +24,13 @@ function initUpload () {
   })
 
   r.on('fileProgress', (file, progress) => {
+    console.log('progress')
     const $photoLoad = $(`.PhotoLoad[data-id="${file.uniqueIdentifier}"]`)
     g.skin.PhotoLoad.setProgress($photoLoad, file.progress() * 100)
   })
 
   r.on('fileSuccess', (file, data) => {
+    console.log('success')
     const $photoLoad = $(`.PhotoLoad[data-id="${file.uniqueIdentifier}"]`)
     data = JSON.parse(data)
     g.skin.PhotoLoad.setPhoto($photoLoad, data.photo)
@@ -35,7 +38,12 @@ function initUpload () {
   })
 
   r.on('fileError', (file, message) => {
+    console.log('error')
     console.log('ERROR!!!')
+  })
+
+  r.on('fileRetry', (file, message) => {
+    console.log('retry')
   })
 }
 

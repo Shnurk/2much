@@ -1,113 +1,124 @@
 const isDev = global.isDev
 
 const static = module.exports = {
-  getServer,
-  getCommonJS,
-  getCommonCSS,
-  getAdminJS,
-  getAdminCSS
+  server: () => data.server,
+  js: getBundlesJS,
+  css: getBundlesCSS
 }
 
-const server = [
-  '/global.js',
-  '/state/state.js',
-  '/nav.js',
+var data = {
+  server: [
+    '/global.js',
+    '/state/state.js',
+    '/nav.js',
 
-  '/lib/q/q.js',
-  '/lib/q/q.attr.js',
-  '/lib/q/q.html.js',
+    '/lib/q/q.js',
+    '/lib/q/q.attr.js',
+    '/lib/q/q.html.js',
 
-  '/skins/skeleton/footer/footer.js',
-  '/skins/skeleton/header/header.js',
-  '/skins/skeleton/layout/layout.js',
-  '/skins/skeleton/page/page.js',
+    '/skins/base/Brick/Brick.js',
 
-  '/skins/common/about/about.js',
-  '/skins/common/article/article.js',
-  '/skins/common/articleCard/articleCard.js',
-  '/skins/common/join/join.js',
-  '/skins/common/modelCard/modelCard.js',
-  '/skins/common/PhotoLoad/PhotoLoad.js',
-  '/skins/common/DropZone/DropZone.js',
+    '/skins/skeleton/footer/footer.js',
+    '/skins/skeleton/header/header.js',
+    '/skins/skeleton/layout/layout.js',
+    '/skins/skeleton/Page/Page.js',
 
-  '/units/pageBase.js',
+    '/skins/common/about/about.js',
+    '/skins/common/article/article.js',
+    '/skins/common/articleCard/articleCard.js',
+    '/skins/common/join/join.js',
+    '/skins/common/modelCard/modelCard.js',
+    '/skins/common/PhotoLoad/PhotoLoad.js',
+    '/skins/common/DropZone/DropZone.js',
+    '/skins/common/Contact/Contact.js',
+    '/skins/common/News/News.js',
+    '/skins/common/Slider/Slider.js',
+    '/skins/common/Model/Model.js',
+    '/skins/common/NewsItem/NewsItem.js',
+    '/skins/common/Intro/Intro.js',
 
-  '/skins/admin/AdminMenu/AdminMenu.js',
-  '/skins/admin/AdminLayout/AdminLayout.js',
-  '/units/Uploader.js',
-  '/units/AdminView.js'
-]
+    '/units/pageBase.js',
 
-const common = [
-  '/global.js',
-  '/state/state.js',
-  '/nav.js',
+    '/skins/admin/AdminMenu/AdminMenu.js',
+    '/skins/admin/AdminLayout/AdminLayout.js',
+    '/units/Uploader.js',
+    '/units/AdminView.js'
+  ],
 
-  '/lib/q/q.js',
-  '/lib/q/q.attr.js',
-  '/lib/q/q.html.js',
-  '/lib/befall.js',
-  '/lib/dollarselector.js',
-  '/lib/resumable/resumable.js',
+  common: [
+    '/global.js',
+    '/state/state.js',
+    '/nav.js',
 
-  '/skins/skeleton/footer/footer.css',
-  '/skins/skeleton/header/header.css',
-  '/skins/skeleton/layout/layout.css',
-  '/skins/skeleton/page/page.css',
+    '/lib/q/q.js',
+    '/lib/q/q.attr.js',
+    '/lib/q/q.html.js',
+    '/lib/befall.js',
+    '/lib/dollarselector.js',
+    '/lib/resumable/resumable.js',
 
-  '/skins/common/about/about.css',
-  '/skins/common/article/article.css',
-  '/skins/common/articleCard/articleCard.css',
-  '/skins/common/join/join.css',
-  '/skins/common/modelCard/modelCard.css',
-]
+    '/skins/skeleton/footer/footer.css',
+    '/skins/skeleton/header/header.css',
+    '/skins/skeleton/layout/layout.css',
+    '/skins/skeleton/Page/Page.css',
+    '/skins/common/News/News.css',
+    '/skins/common/Slider/slider.css',
+    '/skins/common/Slider/slider_logic.js',
+    '/skins/common/model/model.css',
+    '/skins/common/NewsItem/newsItem.css',
+    '/skins/common/Intro/intro.css',
+    '/skins/common/Intro/intro_0.js',
 
-const admin = [
-  '/skins/common/PhotoLoad/PhotoLoad.css',
-  '/skins/common/PhotoLoad/PhotoLoad.js',
-  '/skins/common/PhotoLoad/PhotoLoad_0.js',
-  '/skins/common/DropZone/DropZone.css',
-  '/skins/admin/AdminLayout/AdminLayout.css',
-  '/skins/admin/AdminMenu/AdminMenu.css',
+    '/skins/common/Contact/Contact.css',
+    '/skins/common/about/about.css',
+    '/skins/common/article/article.css',
+    '/skins/common/articleCard/articleCard.css',
+    '/skins/common/join/join.css',
+    '/skins/common/modelCard/modelCard.css',
+  ],
 
-  '/units/Uploader_0.js',
-  '/units/AdminView_0.js'
-]
+  admin: [
+    '/skins/common/PhotoLoad/PhotoLoad.css',
+    '/skins/common/PhotoLoad/PhotoLoad.js',
+    '/skins/common/PhotoLoad/PhotoLoad_0.js',
+    '/skins/common/DropZone/DropZone.css',
+    '/skins/admin/AdminLayout/AdminLayout.css',
+    '/skins/admin/AdminMenu/AdminMenu.css',
 
-common.prod = [
-  '/build/common.js',
-  '/build/common.css'
-]
+    '/units/Uploader_0.js',
+    '/units/AdminView_0.js'
+  ],
 
-admin.prod = [
-  '/build/admin.js',
-  '/build/admin.css'
-]
+  commonProd: [
+    '/build/common.js',
+    '/build/common.css'
+  ],
 
-function getServer () {
-  return server
+  adminProd: [
+    '/build/admin.js',
+    '/build/admin.css'
+  ]
 }
 
-function getCommonJS () {
-  return (isDev ? common : common.prod).filter(js)
+function getBundlesJS (...bundles) {
+  return getBundles(bundles).filter(isJS)
 }
 
-function getCommonCSS () {
-  return (isDev ? common : common.prod).filter(css)
+function getBundlesCSS (...bundles) {
+  return getBundles(bundles).filter(isCSS)
 }
 
-function getAdminJS () {
-  return (isDev ? admin : admin.prod).filter(js)
+function getBundles (bundles) {
+  return bundles.reduce((result, bundle) => {
+    isProd && (bundle = bundle + 'Prod')
+    return result.concat(data[bundle])
+  }, [])
 }
 
-function getAdminCSS () {
-  return (isDev ? admin : admin.prod).filter(css)
-}
-
-function js (path) {
+function isJS (path) {
   return path.endsWith('.js')
 }
 
-function css (path) {
+function isCSS (path) {
   return path.endsWith('.css')
 }

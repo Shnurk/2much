@@ -1,7 +1,9 @@
 /* global q */
 /* global skin */
 
-;(() => {
+(() => {
+
+const $ = global.skin.Brick.render
 
 skin.modelCard = {
   render: renderModelCard
@@ -20,34 +22,31 @@ skin.modelCard = {
  * }
  */
 function renderModelCard(props) {
-  return q.html`
-    <a class="modelCard" href="${props.url}">
-      <div
-        class="modelCard__body"
-        style="background-image: url('${props.photo}')"
-      >
-        <div class="modelCard__params">
-          <div class="modelCard__height">
-            ${props.height.cm} / ${props.height.inch}
-          </div>
-          <div class="modelCard__measures">
-            <div class="modelCard__measure">
-              chest<br />${props.chest.cm} / ${props.chest.inch}
-            </div>
-            <div class="modelCard__measure">
-              waist<br />${props.waist.cm} / ${props.waist.inch}
-            </div>
-            <div class="modelCard__measure">
-              hips<br />${props.hips.cm} / ${props.hips.inch}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modelCard__name">
-        ${props.name}
-      </div>
-    </a>
-  `;
+  return (
+    $({ class: 'modelCard', tag: 'a', href: props.url }, [
+      $({
+        class: 'modelCard__body',
+        style: `background-image: url('${props.photo}')`
+      }, [
+        $('modelCard__params', [
+          $('modelCard__height', `${props.height.cm} / ${props.height.inch}`),
+          $('modelCard__measures', (
+            [ props.chest, props.waist, props.hips ].map(measure => (
+              $('modelCard__measure', [
+                'chest',
+                $({ tag: 'br' }),
+                `${measure.cm} / ${measure.inch}`
+              ])
+            ))
+          ))
+        ])
+      ]),
+
+      $('modelCard__name', (
+        props.name
+      ))
+    ])
+  )
 }
 
 })()

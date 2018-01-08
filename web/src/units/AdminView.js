@@ -1,5 +1,6 @@
 (() => {
 
+const $ = global.skin.Brick.render
 const state = g.state
 const Page = g.skin.page
 const AdminLayout = g.skin.AdminLayout
@@ -37,42 +38,56 @@ function buildContent (props) {
   const type = props.type
 
   if (type === 'list') {
-    return buildList(props.persons)
+    return (
+      props.persons ? buildListPersons(props.persons) :
+      props.articles ? buildListArticles(props.articles) :
+      ''
+    )
   }
 
   if (type === 'edit') {
-    return buildForm(props.person)
+    return (
+      props.person ? buildFormPerson(props.person) :
+      props.article ? buildFormArticle(props.article, props.allModels) :
+      ''
+    )
   }
 
   if (type === 'create') {
-    return buildForm(null)
+    return (
+      props.what === 'person' ? buildFormPerson(null) :
+      props.what === 'articles' ? buildFormArticle(null, props.allModels) :
+      ''
+    )
   }
-
-  // Uploader.build(),
-  // g.skin.PhotoLoad.render()
 }
 
-
-function buildList (persons) {
-  return q.html`
-    <div class="AdminList">
-      <a class="AdminList__new" href="/admin/models/new">[+]</a>
-      ${persons.reverse().map((person, i) => q.html`
-        <a class="AdminList__item" href="/admin/models/${person._id}">
-          <div
-            class="AdminList__itemPhoto"
-            ${person.cover && `style="background-image: url('/media/small/${person.cover.fileName}')"`}
-          ></div>
-          <div class="AdminList__itemName">
-            ${person.name || '<i>no name</i>'}
-          </div>
-        </a>
-      `)}
-    </div>
-  `
+function buildListPersons (persons) {
+  return (
+    $('AdminLayout', [
+      $({ tag: 'a', class: 'AdminList__new', href: '/admin/models/new' }, '[+]'),
+      persons.reverse().map((person, i) => (
+        $({
+          tag: 'a',
+          class: 'AdminList__item',
+          href: `/admin/models/${person._id}`
+        }, [
+          $({
+            class: 'AdminList__itemPhoto',
+            style: person.cover && (
+              `background-image: url('/media/small/${person.cover.fileName}')`
+            )
+          }),
+          $('AdminList__itemName', (
+            person.name || $({ tag: 'i' }, 'no name')
+          ))
+        ])
+      ))
+    ])
+  )
 }
 
-function buildForm (person) {
+function buildFormPerson (person) {
   const isEdit = !!person
   person || (person = {
     _id: '',
@@ -220,5 +235,148 @@ function buildForm (person) {
   `
 }
 
+
+
+
+
+
+
+function buildListArticles (articles) {
+  return (
+    $('AdminLayout', [
+      $({ tag: 'a', class: 'AdminList__new', href: '/admin/articles/new' }, '[+]'),
+      articles.reverse().map((article, i) => (
+        $({
+          tag: 'a',
+          class: 'AdminList__item',
+          href: `/admin/articles/${article._id}`
+        }, [
+          $({
+            class: 'AdminList__itemPhoto',
+            style: article.photos.length && (
+              `background-image: url('/media/small/${article.photos[0].fileName}')`
+            )
+          }),
+          $('AdminList__itemName', (
+            article.titlePretty || $({ tag: 'i' }, 'no title')
+          ))
+        ])
+      ))
+    ])
+  )
+}
+
+function buildFormArticle (article, allModels) {
+  const isEdit = !!article
+  article || (article = {
+    _id: '',
+    title: '',
+    slug: '',
+    models: [],
+    photos: [],
+    date: {
+      day: null,
+      month: null,
+      year: null
+    }
+  })
+
+  const onSaveClick = q.onClick('skin.AdminForm._onSaveClick', isEdit)
+  const onDeleteClick = q.onClick('skin.AdminForm._onDeleteClick', 'event')
+
+  return q.html`
+    <div class="AdminForm">
+      <div class="AdminForm__body">
+        <div class="AdminForm__column">
+          <label class="AdminForm__section">
+            <div class="AdminForm__title">Title</div>
+            <div class="AdminForm__content">
+              <input class="AdminForm__input" name="title" value="${article.title}"
+                placeholder="{model1} and {model2} for Vogue"
+                style="width: 300px"
+              />
+            </div>
+          </label>
+
+          <div class="AdminForm__section">
+            <div class="AdminForm__title">Date</div>
+            <div class="AdminForm__content">
+              <label class="AdminForm__row">
+                <div class="AdminForm__label">day</div>
+                <input class="AdminForm__input" name="day" type="number" value="${article.date.day}" />
+              </label>
+              <label class="AdminForm__row">
+                <div class="AdminForm__label">month</div>
+                <input class="AdminForm__input" name="month" type="number" value="${article.date.month}" />
+              </label>
+              <label class="AdminForm__row">
+                <div class="AdminForm__label">year</div>
+                <input class="AdminForm__input" name="year" type="number" value="${article.date.year || 2017}" />
+              </label>
+            </div>
+          </div>
+
+          <div class="AdminForm__section">
+            <div class="AdminForm__title">Models</div>
+            <div class="AdminForm__content">
+              ${article.models.map(model => q.html`
+                <label class="AdminForm__row">
+                  <select class="AdminForm__select AdminForm__model">
+                    ${allModels.map(m => q.html`
+                      <option value="${m._id}" ${m._id === model._id ? 'selected' : ''}>${m.name}</option>
+                    `)}
+                  </select>
+                  <div class="AdminForm__selectRemove" onclick="window.removeSelect(this)">×</div>
+                </label>
+              `)}
+              <label class="AdminForm__row">
+                <select
+                  class="AdminForm__select AdminForm__model AdminForm__addModel"
+                  onchange="window.onAddModelChange(this)"
+                >
+                  <option id="selected_model_option" value="0" selected>Select model</option>
+                  ${allModels.map(m => q.html`
+                    <option value="${m._id}">${m.name}</option>
+                  `)}
+                </select>
+                <div class="AdminForm__selectRemove" onclick="window.removeSelect(this)">×</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="AdminForm__column">
+          <div class="AdminForm__section AdminForm__section_photos AdminForm__section_upload">
+            <div class="AdminForm__title">Photos</div>
+            <div class="AdminForm__content">
+              ${article.photos.map(p => (
+                skin.PhotoLoad.render({
+                  id: p._id,
+                  photo: `/media/small/${p.fileName}`,
+                  percent: 100,
+                })
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="AdminForm__footer">
+        <button class="AdminForm__save" ${onSaveClick}>
+          ${isEdit ? 'Save' : 'Create'}
+        </button>
+        ${isEdit && (q.html`
+          <form action="/admin/articles/${article._id}/delete" method="POST">
+            <button class="AdminForm__delete" ${onDeleteClick}>
+              Delete
+            </button>
+          </form>
+        `)}
+        <div class="AdminForm__saved">
+          Changes saved
+        </div>
+      </div>
+    </div>
+  `
+}
 
 })()

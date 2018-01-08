@@ -17,6 +17,7 @@ async function connect (mongoUrl) {
   db._collections.Article = mongo.collection('article')
   require('./db.photo')
   require('./db.person')
+  require('./db.article')
 }
 
 function pkFactory () {}

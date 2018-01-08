@@ -1,7 +1,6 @@
 (() => {
 
-global.befall = befall
-
+this.befall = befall
 
 function befall () {
   const fns = []
@@ -11,7 +10,6 @@ function befall () {
   b._args = Array.from(arguments).join(', ')
   return b
 }
-
 
 function emitter () {
   const fns = this
@@ -33,7 +31,6 @@ function emitter () {
   }
 }
 
-
 function off (fn) {
   const fns = this
 
@@ -43,7 +40,6 @@ function off (fn) {
     fns.length = 0
   }
 }
-
 
 function arrayRemove (array, value) {
   while (true) {

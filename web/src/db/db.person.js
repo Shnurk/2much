@@ -7,6 +7,8 @@ Object.assign(db, {
     update: updatePerson,
     delete: deletePerson,
     getById,
+    getBySlug,
+    getByIds,
     getAll
   }
 })
@@ -18,6 +20,16 @@ async function deletePerson (id) {
 async function getById (personId) {
   const person = await Person.findOne({ _id: personId })
   return person ? await wrapPerson(person) : null
+}
+
+async function getBySlug (slug) {
+  const person = await Person.findOne({ slug })
+  return person ? await wrapPerson(person) : null
+}
+
+async function getByIds (ids) {
+  const persons = await Person.find({ _id: { $in: ids }}).toArray()
+  return Promise.all(persons.map(wrapPerson))
 }
 
 async function getAll () {

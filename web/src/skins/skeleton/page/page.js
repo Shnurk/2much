@@ -1,52 +1,50 @@
-/* global q */
+(() => {
 
-;(() => {
+const Brick = global.skin.Brick
+const q = global.q
 
 skin.page = {
   render: renderPage
 }
 
-
 /**
  * props = {
- *   css: URL[]
  *   js: URL[]
+ *   css: URL[]
  *   title: String
- *   body: HTML
  * }
  */
-function renderPage (props) {
-  const css = props.css || []
+function renderPage (props, children = '') {
   const js = props.js || []
+  const css = props.css || []
 
-  return q.html`
-    <!doctype html>
-    <html class="page">
-      <head>
-        <meta charset="utf-8" />
-        <title>${props.title}</title>
-        ${renderCSS('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400')}
-        ${css.map(renderCSS)}
-      </head>
-      <body class="page__body">
-        ${props.body}
-        ${js.map(renderJS)}
-      </body>
-    </html>
-  `
+  return (
+    '<!doctype html>' +
+    Brick.render({ tag: 'html', class: 'Page' }, [
+      Brick.render({ tag: 'head' }, [
+        Brick.render({ tag: 'meta', charset: 'utf-8' }),
+        Brick.render({ tag: 'title' }, props.title),
+        renderCSS('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400'),
+        css.map(renderCSS)
+      ]),
+      Brick.render({ tag: 'body', class: 'Page__body' }, [
+        props.body,
+        Brick.render('Page__scripts', js.map(renderJS))
+      ])
+    ])
+  )
 }
 
-
 function renderCSS (url) {
-  return q.html`
-    <link rel="stylesheet" href="${url}" />
-  `
+  return (
+    Brick.render({ tag: 'link', rel: 'stylesheet', href: url })
+  )
 }
 
 function renderJS (url) {
-  return q.html`
-    <script src="${url}"></script>
-  `
+  return (
+    Brick.render({ tag: 'script', src: url })
+  )
 }
 
 })()
