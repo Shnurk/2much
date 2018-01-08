@@ -5,7 +5,8 @@
   "main": "schema.js",
   "scripts": {
     "start": "NODE_ENV=development nodemon --inspect src/start.js",
-    "start-prod": "NODE_ENV=production nodemon --inspect src/start.js"
+    "start-prod": "NODE_ENV=production nodemon --inspect src/start.js",
+    "build": "NODE_ENV=development node scripts/build.js"
   },
   "author": "kriscos",
   "license": "ISC",
@@ -25,6 +26,8 @@
     "sharp": "^0.18.4"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "clean-css": "^4.1.9",
+    "nodemon": "^1.12.1",
+    "uglify-es": "^3.3.5"
   }
 }
