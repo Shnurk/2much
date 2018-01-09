@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=development nodemon --inspect src/start.js",
     "start-prod": "NODE_ENV=production nodemon --inspect src/start.js",
-    "build": "NODE_ENV=development node scripts/build.js"
+    "build": "NODE_ENV=development node scripts/build.js",
+    "start-server": "bash scripts/start_server.sh"
   },
   "author": "kriscos",
   "license": "ISC",
