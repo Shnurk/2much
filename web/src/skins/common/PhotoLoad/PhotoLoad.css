@@ -20,6 +20,7 @@
 .PhotoLoad__progressLine {
   height: 100%;
   background: #5491f1;
+  width: 0;
 }
 
 .PhotoLoad_removed {
