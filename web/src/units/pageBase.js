@@ -142,7 +142,7 @@ function buildContent (props) {
         name: p.name,
         bookUrl: `/models/${p.slug}`,
         polaroidsUrl: `/models/${p.slug}/polaroids`,
-        instagramUrl: p.instagram,
+        instagramUrl: `https://instagram.com/${p.instagram}`,
         pdfUrl: `/models/${p.slug}.pdf`,
         photos: photosPrepared,
         params: {

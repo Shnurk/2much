@@ -32,7 +32,7 @@ async function onSaveClick(isEdit) {
   const data = serialize()
   const body = new FormData();
   body.append("json", JSON.stringify(data));
-  const result = await fetch(location.pathname, { method: 'POST', body })
+  const result = await fetch(location.pathname, { method: 'POST', body, credentials: 'include' })
 
   if (isModels()) {
     location.href = "/admin/models";

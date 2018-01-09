@@ -68,8 +68,9 @@ async function getById (id) {
 
 async function getByIds (ids) {
   const photos = []
-  await Promise.all(ids.map(async id => {
-    photos.push(await Photo.findOne({ _id: id }))
-  }))
+  for (let id of ids) {
+    const photo = await Photo.findOne({ _id: id })
+    photos.push(photo)
+  }
   return photos
 }

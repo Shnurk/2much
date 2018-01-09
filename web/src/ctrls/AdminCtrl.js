@@ -141,7 +141,9 @@ async function articleEdit (req, res) {
   const articleId = req.params.articleId
 
   if (req.method === 'POST') {
+    console.log('HERE')
     const data = JSON.parse(req.body.json)
+    console.log(data)
     await db.article.update(articleId, data)
     res.json({ ok: 1 })
   }

@@ -5,6 +5,6 @@ function getAdminMenu () {
 }
 
 var adminMenu = [
-  { title: 'Модели', url: '/admin/models' },
-  { title: 'Новости', url: '/admin/articles' },
+  { title: 'Models', url: '/admin/models' },
+  { title: 'News', url: '/admin/articles' },
 ]

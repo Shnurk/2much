@@ -36,8 +36,8 @@ function buildAdminView (props) {
     : (
       AdminLayout.render({
         menu: [
-          { title: 'Модели', url: '/admin/models' },
-          { title: 'Статьи', url: '/admin/articles' }
+          { title: 'Models', url: '/admin/models' },
+          { title: 'News', url: '/admin/articles' }
         ]
       }, (
         buildContent(props)
@@ -254,10 +254,12 @@ function buildFormPerson (person) {
 
 
 function buildListArticles (articles) {
+  articles = articles.reverse()
+  console.log(articles[0].photos)
   return (
     $('AdminLayout', [
       $({ tag: 'a', class: 'AdminList__new', href: '/admin/articles/new' }, '[+]'),
-      articles.reverse().map((article, i) => (
+      articles.map((article, i) => (
         $({
           tag: 'a',
           class: 'AdminList__item',

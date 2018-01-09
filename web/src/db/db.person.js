@@ -54,10 +54,15 @@ async function wrapPerson (person) {
 
 async function createPerson (data) {
   data.slug = translit(data.name).replace(/ /g, '-')
+  data.instagram = prettyInstagram(data.instagram)
   await Person.insert(data)
 }
 
 async function updatePerson (id, data) {
-  console.log(data.book)
+  data.instagram = prettyInstagram(data.instagram)
   await Person.update({ _id: id }, { $set: data })
+}
+
+function prettyInstagram (instagram) {
+  return instagram.split('instagram.com/')[1] || instagram
 }

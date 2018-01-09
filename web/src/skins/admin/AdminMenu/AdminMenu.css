@@ -7,9 +7,18 @@
 
 }
 
+.AdminMenu__logout {
+  position: absolute;
+  bottom: 0;
+}
 
-.AdminMenu__item {
+
+.AdminMenu__item,
+.AdminMenu__logout {
   display: block;
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
   padding: 15px;
 }
 
