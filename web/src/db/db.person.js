@@ -1,4 +1,5 @@
 const db = require('./db')
+const translit = require('cyrillic-to-translit-js')().transform
 const Person = db._collections.Person
 
 Object.assign(db, {
@@ -52,6 +53,7 @@ async function wrapPerson (person) {
 }
 
 async function createPerson (data) {
+  data.slug = translit(data.name).replace(/ /g, '-')
   await Person.insert(data)
 }
 
