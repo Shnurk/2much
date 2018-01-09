@@ -8,13 +8,13 @@ const PASSWORD = 'aga1Nst'
 const AdminCtrl = module.exports = {
   manage (app) {
     app.use('/admin/models/new', needLogin, personCreate)
+    app.post('/admin/models/:personId/delete', needLogin, personDelete)
     app.use('/admin/models/:personId', needLogin, personEdit)
     app.use('/admin/models', needLogin, personList)
-    app.post('/admin/models/:personId/delete', needLogin, personDelete)
 
     app.use('/admin/articles/new', needLogin, articleCreate)
-    app.use('/admin/articles/:articleId', needLogin, articleEdit)
     app.post('/admin/articles/:articleId/delete', needLogin, articleDelete)
+    app.use('/admin/articles/:articleId', needLogin, articleEdit)
     app.use('/admin/articles', needLogin, articleList)
 
     app.get('/admin/api/execute', needLogin, execute)
