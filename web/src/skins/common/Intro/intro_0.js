@@ -8,21 +8,17 @@ if (location.pathname === '/') {
 }
 
 function showNextImg() {
-  intro.classList.remove('intro_' + img);
-  img += 1;
-  if (img == 5) {
-    img = 1;
-  }
-  intro.classList.add('intro_' + img);
+  const $active = $('.intro__content_active')
+  const $next = $active.nextElementSibling || $active.parentElement.firstElementChild
+  $next.classList.add('intro__content_active')
+  $active.classList.remove('intro__content_active')
 }
 
 function showPrevImg() {
-  intro.classList.remove('intro_' + img);
-  img -= 1;
-  if (img == 0) {
-    img = 4;
-  }
-  intro.classList.add('intro_' + img);
+  const $active = $('.intro__content_active')
+  const $prev = $active.previousElementSibling || $active.parentElement.lastElementChild
+  $prev.classList.add('intro__content_active')
+  $active.classList.remove('intro__content_active')
 }
 
 function killTimer() {

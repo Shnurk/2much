@@ -67,5 +67,9 @@ async function getById (id) {
 }
 
 async function getByIds (ids) {
-  return await Photo.find({ _id: { $in: ids }}).toArray()
+  const photos = []
+  await Promise.all(ids.map(async id => {
+    photos.push(await Photo.findOne({ _id: id }))
+  }))
+  return photos
 }

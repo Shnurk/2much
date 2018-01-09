@@ -58,5 +58,6 @@ async function createPerson (data) {
 }
 
 async function updatePerson (id, data) {
+  console.log(data.book)
   await Person.update({ _id: id }, { $set: data })
 }

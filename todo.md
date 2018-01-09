@@ -24,7 +24,7 @@
 [x] (4) разработка и верстка админ-интерфейсов
 [x] (3) отображение данных из базы в интерфейсе
 [x] (12) создание/удаление/редактирование всех видов данных
-[ ] (3) drag-and-drop интерфейс
+[x] (3) drag-and-drop интерфейс
 [x] (1) обработка изображений при сохранении
 
 # Развертывание [3]
@@ -41,12 +41,12 @@ main page
   - social links like http://dnkmodels.com/
 
 news
-  - no categories
+  [x] no categories
   - sort by month + year
-  - vertical only
-  - max 3 in a row
-  - news and models are assosiated (m2m)
-  - preview is first from all
+  [x] vertical only
+  [x] max 3 in a row
+  [x] news and models are assosiated (m2m)
+  [x] preview is first from all
 
 join
   - send form to email (link)
@@ -60,5 +60,5 @@ pdf choose photos
   - agency information on every page
 
 contacts
-  - like http://dnkmodels.com/contacts/
+  [x] like http://dnkmodels.com/contacts/
 

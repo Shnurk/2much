@@ -7,6 +7,8 @@ const Resumable = g.Resumable
   initUpload()
 })()
 
+dragula(Array.from($$('.AdminForm__section_upload .AdminForm__content')))
+
 window.skin.AdminForm = {
   _onSaveClick: onSaveClick,
   _onDeleteClick: onDeleteClick

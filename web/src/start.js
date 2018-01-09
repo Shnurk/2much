@@ -28,7 +28,8 @@ const config = {
   public: isDev
     ? {
       '/': './src/',
-      '/media': './media/'
+      '/media': './media/',
+      '/images': './images/',
     }
     : {
       '/build': './src/build/'

@@ -175,7 +175,7 @@ function buildFormPerson (person) {
           </div>
         </div>
 
-        <div class="AdminForm__column">
+        <div class="AdminForm__column AdminForm__column_uploads">
           <div class="AdminForm__section AdminForm__section_cover AdminForm__section_upload">
             <div class="AdminForm__title">Cover</div>
             <div class="AdminForm__content">
@@ -345,7 +345,7 @@ function buildFormArticle (article, allModels) {
           </div>
         </div>
 
-        <div class="AdminForm__column">
+        <div class="AdminForm__column AdminForm__column_uploads">
           <div class="AdminForm__section AdminForm__section_photos AdminForm__section_upload">
             <div class="AdminForm__title">Photos</div>
             <div class="AdminForm__content">

@@ -1,4 +1,5 @@
 .PhotoLoad {
+  cursor: pointer;
   width: 55px;
   height: 55px;
   background-size: cover;

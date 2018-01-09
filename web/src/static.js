@@ -78,6 +78,9 @@ var data = {
   ],
 
   admin: [
+    '/lib/dragula.min.js',
+    '/lib/dragula.min.css',
+
     '/skins/common/PhotoLoad/PhotoLoad.css',
     '/skins/common/PhotoLoad/PhotoLoad.js',
     '/skins/common/PhotoLoad/PhotoLoad_0.js',

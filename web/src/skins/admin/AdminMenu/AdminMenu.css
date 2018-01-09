@@ -1,3 +1,8 @@
+.Page__body {
+  background: #efefef;
+}
+
+
 .AdminMenu {
 
 }
@@ -26,6 +31,7 @@
 
 .AdminForm__section {
   display: block;
+  background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
   margin-bottom: 15px;
@@ -137,7 +143,7 @@
   width: 270px;
 }
 .AdminList__item:hover {
-  background: #a4cbff2b;
+  background: #fff;
   border-radius: 2px;
 }
 
@@ -168,4 +174,20 @@
   cursor: pointer;
   padding: 0 7px;
   user-select: none;
+}
+
+
+
+.AdminForm__column_uploads {
+  display: flex;
+}
+.AdminForm__section_upload {
+  margin-right: 15px;
+  width: 77px;
+  text-align: center;
+}
+.AdminForm__section_upload .AdminForm__content {
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 }

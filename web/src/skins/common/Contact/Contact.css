@@ -1,3 +1,32 @@
-.Contact {
+.Contacts {
 
+}
+
+.Contacts__title {
+  font-size: 35px;
+  margin-bottom: 30px;
+  width: 900px;
+}
+
+.Contacts__item {
+
+}
+
+.Contacts__itemRow {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.Contacts__itemRow:last-child {
+  margin-bottom: 0;
+}
+.Contacts__itemRow_link {
+  display: block;
+  color: black;
+  text-decoration-color: #c7c7c7;
+  text-decoration-skip: ink;
+}
+.Contacts__itemRow_title {
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 11px;
 }
