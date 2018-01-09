@@ -21,7 +21,19 @@ function buildAdminView (props) {
     js: props.js,
     css: props.css,
     title: '2much | Admin',
-    body: (
+    body:
+      props.type === 'login' ? `
+        <form class="adminForm" action="${props.originalUrl}" method="POST">
+          <label class="adminForm__row">
+            <div class="adminForm__label">Пароль</div>
+            <input class="adminForm__input" name="password" type="password">
+          </label>
+          <label class="adminForm__row">
+            <button class="adminForm__submit" type="submit">Сохранить</button>
+          </label>
+        </form>
+      `
+    : (
       AdminLayout.render({
         menu: [
           { title: 'Модели', url: '/admin/models' },

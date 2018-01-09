@@ -3,25 +3,52 @@ const static = requireSrc('/static')
 const nav = g.nav
 const AdminView = g.unit.AdminView
 
+const PASSWORD = 'aga1Nst'
+
 const AdminCtrl = module.exports = {
   manage (app) {
-    app.get('/admin', redirectToPersons)
-    app.get('/admin/models', personList)
-    app.use('/admin/models/new', personCreate)
-    app.post('/admin/models/:personId/delete', personDelete)
-    app.use('/admin/models/:personId', personEdit)
+    app.use('/admin/models/new', needLogin, personCreate)
+    app.use('/admin/models/:personId', needLogin, personEdit)
+    app.use('/admin/models', needLogin, personList)
+    app.post('/admin/models/:personId/delete', needLogin, personDelete)
 
-    app.get('/admin/articles', articleList)
-    app.use('/admin/articles/new', articleCreate)
-    app.post('/admin/articles/:articleId/delete', articleDelete)
-    app.use('/admin/articles/:articleId', articleEdit)
+    app.use('/admin/articles/new', needLogin, articleCreate)
+    app.use('/admin/articles/:articleId', needLogin, articleEdit)
+    app.post('/admin/articles/:articleId/delete', needLogin, articleDelete)
+    app.use('/admin/articles', needLogin, articleList)
 
-    app.get('/admin/api/execute', execute)
+    app.get('/admin/api/execute', needLogin, execute)
+
+    app.use('/admin/logout', logout)
+    app.use('/admin', needLogin, redirectToPersons)
   }
 }
 
 const js = static.js('common', 'admin')
 const css = static.css('common', 'admin')
+
+function logout(req, res) {
+  res.cookie('pass', null)
+  res.redirect('/admin')
+  return
+}
+
+function needLogin(req, res, next) {
+  if (req.cookies.pass !== PASSWORD) {
+    if (req.method === 'POST') {
+      res.cookie('pass', req.body.password)
+      res.redirect(req.originalUrl)
+      return
+    }
+
+    const page = AdminView.build({ type: 'login', css, js, originalUrl: req.originalUrl })
+    res.end(page)
+    return
+  }
+
+  next()
+}
+
 
 async function execute (req, res) {
   const translit = require('cyrillic-to-translit-js')().transform
