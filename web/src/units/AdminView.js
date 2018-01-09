@@ -255,7 +255,6 @@ function buildFormPerson (person) {
 
 function buildListArticles (articles) {
   articles = articles.reverse()
-  console.log(articles[0].photos)
   return (
     $('AdminLayout', [
       $({ tag: 'a', class: 'AdminList__new', href: '/admin/articles/new' }, '[+]'),
