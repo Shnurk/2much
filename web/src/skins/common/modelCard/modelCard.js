@@ -31,9 +31,9 @@ function renderModelCard(props) {
         $('modelCard__params', [
           $('modelCard__height', `${props.height.cm} / ${props.height.inch}`),
           $('modelCard__measures', (
-            [ props.chest, props.waist, props.hips ].map(measure => (
+            [ props.chest, props.waist, props.hips ].map((measure, i) => (
               $('modelCard__measure', [
-                'chest',
+                [ 'chest', 'waist', 'hips' ][i],
                 $({ tag: 'br' }),
                 `${measure.cm} / ${measure.inch}`
               ])
