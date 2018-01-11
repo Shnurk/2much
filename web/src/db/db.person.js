@@ -60,6 +60,7 @@ async function createPerson (data) {
 
 async function updatePerson (id, data) {
   data.instagram = prettyInstagram(data.instagram)
+  data.slug = translit(data.name).replace(/ /g, '-')
   await Person.update({ _id: id }, { $set: data })
 }
 
