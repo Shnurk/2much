@@ -70,7 +70,9 @@ async function getByIds (ids) {
   const photos = []
   for (let id of ids) {
     const photo = await Photo.findOne({ _id: id })
-    photos.push(photo)
+    if (photo) {
+      photos.push(photo)
+    }
   }
   return photos
 }

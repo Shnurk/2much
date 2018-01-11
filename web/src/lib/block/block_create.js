@@ -1,8 +1,8 @@
 (() => {
 
-const brick = global.brick
+const brick = mdl.require('brick')
 
-global.block = createBlock
+mdl.exports('block.create', createBlock)
 
 /**
  * props = String || {
@@ -10,6 +10,7 @@ global.block = createBlock
  *   inner: [Any]
  *   ...attrs
  * }
+ * => HTML
  */
 function createBlock (props) {
   if (typeof props === 'string') {
@@ -25,11 +26,11 @@ function createBlock (props) {
   Object.keys(props).forEach(name => {
     const value = props[name]
 
-    // Skip `tag` and `input`
+    // Skip `tag` and `inner`
     if (name === 'tag' || name === 'inner') {
       return
 
-    // Process `data-`
+    // Process `data`
     } else if (name === 'data') {
       Object.keys(value).forEach(key => {
         const keyDashed = camelCaseToDash(key)

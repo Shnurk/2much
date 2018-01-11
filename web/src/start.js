@@ -8,7 +8,7 @@ const multipart = require('connect-multiparty')
 
 const env = process.env.NODE_ENV
 const port = process.env.PORT || 3000
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/twomuch'
+const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/against'
 
 global.requireSrc = requireSrc
 global.env = env

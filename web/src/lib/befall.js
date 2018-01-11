@@ -7,7 +7,7 @@ function befall () {
   const b = emitter.bind(fns)
   b.off = off.bind(fns)
   b._subscribers = fns
-  b._args = Array.from(arguments).join(', ')
+  b._args = Array.from(arguments)
   return b
 }
 

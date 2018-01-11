@@ -1,11 +1,18 @@
-global = window;
 (() => {
 
-global.brick = createBrick
-brick.wrap = htmlToBrick
+brick = {
+  create: createBrick,
+  wrap: htmlToBrick
+}
 
 const BRICK = '__brick'
 
+/**
+ * tag = String
+ * attrs = Object
+ * children = String || String[]
+ * => HTML
+ */
 function createBrick (tag = 'div', attrs = {}, children = '') {
   if (!isValidTag(tag)) {
     return null
