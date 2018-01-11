@@ -2,7 +2,9 @@
 
 const brick = mdl.require('brick')
 
-mdl.exports('block.create', createBlock)
+mdl.extend('block', {
+  create: createBlock
+})
 
 /**
  * props = String || {
@@ -51,7 +53,7 @@ function createBlock (props) {
     }
   })
 
-  return brick(tag, attrs, children)
+  return brick.create(tag, attrs, children)
 }
 
 /**

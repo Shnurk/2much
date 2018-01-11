@@ -5,6 +5,11 @@ window.bem = {
 }
 
 function createClass (className, mods = {}) {
+  if (!isObject(mods)) {
+    console.error('[bem] mods should be object, but given', mods)
+    return className
+  }
+
   const classes = [ className ]
 
   Object.keys(mods).forEach(k => {
@@ -18,6 +23,10 @@ function createClass (className, mods = {}) {
   })
 
   return classes.join(' ')
+}
+
+function isObject (any) {
+  return Object.prototype.toString.call(any) === '[object Object]'
 }
 
 })()

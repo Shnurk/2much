@@ -93,6 +93,12 @@ function safe (numOrStr) {
     .replace(/>/g, '&gt;')
 }
 
+/**
+ * Converts any value to flat array
+ * flatArray(1) => [ 1 ]
+ * flatArray([ 2 ]) => [ 2 ]
+ * flatArray([ 1, [ 2, 3 ] ]) => [ 1, 2, 3 ]
+ */
 function flatArray (any) {
   return isArray(any) ? flatten(any) : [ any ]
 }

@@ -1,6 +1,8 @@
 (() => {
 
-mdl.exports('block.callHandler', callHandler)
+mdl.extend('block', {
+  callHandler
+})
 
 /**
  * callHandler('form.onSubmit', event, { userId: 2 })
@@ -18,14 +20,38 @@ function callHandler (handler, ...args) {
     handler = [ handler ]
   }
 
-  const [ handlerFn, ...handlerArgs ] = handler
-  const fn = safeGet(window, handlerFn)
+  const [ handlerFnGetter, ...handlerArgs ] = handler
+  const fn = safeGet(window, handlerFnGetter)
 
   if (fn) {
     fn(...handlerArgs, ...args)
   } else {
-    console.error(`[block] Handler \`${handlerFn}\` is not defined`)
+    console.error(`[block] Function \`${handlerFnGetter}\` is not defined`)
   }
 }
+
+/**
+ * safeGet({ photos: { count: 3 } }, 'photos.count') => 3
+ * safeGet({ photos: { count: 3 } }, 'photos.total') => undefined
+ *
+ * obj = Object
+ * getter = String // dots separated
+ * => Any || undefined
+ */
+function safeGet (obj, getter) {
+  const keys = getter.split('.')
+  const keysCount = keys.length
+
+  let cursor = obj;
+  for (let i = 0; i < keysCount; i++) {
+    cursor = cursor[keys[i]]
+    if (!cursor) {
+      return undefined
+    }
+  }
+
+  return cursor
+}
+
 
 })()

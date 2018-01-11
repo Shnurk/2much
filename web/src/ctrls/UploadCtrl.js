@@ -37,6 +37,8 @@ function upload (req, res) {
           photo: `/media/small/${newFileName}`
         })
       })
+    } else {
+      res.send('0')
     }
   })
 }

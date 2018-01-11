@@ -1,22 +1,30 @@
 (() => {
 
-mdl = {
-  require,
-  exports
+const g = typeof global === 'undefined' ? window : global
+
+g.mdl = {
+  require: mdlRequire,
+  export: mdlExport,
+  extend: mdlExtend
 }
 
-function require (getter) {
-  const result = safeGet(g, getter)
+function mdlRequire (getter) {
+  const module = safeGet(g, getter)
 
-  if (!defined(result)) {
+  if (isUndefined(module)) {
     console.error(`[mdl] Unable to require \`${getter}\``)
   }
 
-  return result
+  return module
 }
 
-function exports (getter, value) {
+function mdlExport (getter, value) {
   safeSet(g, getter, value)
+}
+
+function mdlExtend (getter, obj) {
+  const module = safeGet(g, getter) || safeSet(g, getter, {})
+  Object.assign(module, obj)
 }
 
 /**
@@ -57,7 +65,7 @@ function safeSet (obj, getter, value) {
   let cursor = obj;
   for (let i = 0; i < lastKeyIndex; i++) {
     const key = keys[i]
-    if (!defined(cursor[key])) {
+    if (isUndefined(cursor[key])) {
       cursor[key] = {}
     }
     cursor = cursor[key]
@@ -65,10 +73,12 @@ function safeSet (obj, getter, value) {
 
   const lastKey = keys[lastKeyIndex]
   cursor[lastKey] = value
+
+  return value
 }
 
-function defined (any) {
-  return typeof(any) !== 'undefined'
+function isUndefined (any) {
+  return any === undefined
 }
 
 })()

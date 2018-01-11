@@ -66,10 +66,7 @@ function initUpload () {
   })
 
   r.on('fileProgress', (file, progress) => {
-    console.log('file progress')
-    console.log(file)
     const $photoLoad = $(`.PhotoLoad[data-id="${file.uniqueIdentifier}"]`)
-    console.log($photoLoad)
     if ($photoLoad) {
       g.skin.PhotoLoad.setProgress($photoLoad, file.progress() * 100)
     }
@@ -79,9 +76,12 @@ function initUpload () {
     console.log('file success')
     const $photoLoad = $(`.PhotoLoad[data-id="${file.uniqueIdentifier}"]`)
     if ($photoLoad) {
-      data = JSON.parse(data)
-      g.skin.PhotoLoad.setPhoto($photoLoad, data.photo)
-      $photoLoad.setAttribute('data-id', data.id)
+      if (data !== '0') {
+        data = JSON.parse(data)
+        console.log(data)
+        g.skin.PhotoLoad.setPhoto($photoLoad, data.photo)
+        $photoLoad.setAttribute('data-id', data.id)
+      }
     }
   })
 
@@ -91,7 +91,7 @@ function initUpload () {
   })
 
   r.on('fileRetry', (file) => {
-    console.log('file retry')
+    // console.log('file retry')
   })
 }
 
