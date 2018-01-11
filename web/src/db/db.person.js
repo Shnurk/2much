@@ -64,5 +64,6 @@ async function updatePerson (id, data) {
 }
 
 function prettyInstagram (instagram) {
-  return instagram.split('instagram.com/')[1] || instagram
+  instagram = instagram.split('instagram.com/')[1] || instagram
+  return instagram.split('/')[0]
 }
