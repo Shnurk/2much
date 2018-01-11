@@ -2,7 +2,7 @@
 
 const $ = global.skin.Brick.render
 const Header = global.skin.header
-const Footer = global.skin.footer
+const Footer = global.skin.Footer
 
 global.skin.layout = {
   render: renderLayout

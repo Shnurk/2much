@@ -1,19 +1,40 @@
-.Footer {
-
+.footer {
+  border-top: 1px solid #efefef;
+  width: 66%;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.Footer__socials {
-
+.footer__image:hover {
+  width: 70px;
 }
 
-.Footer__rights {
-
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
-.Footer__social {
-
+.socials__image {
+  outline: none;
+  width: 20px;
+  padding: 20px;
+  opacity: 0.6;
 }
 
-.Footer__socialImage {
+.socials__image:hover {
+  opacity: 1;
+}
 
+.footer__rights {
+  font-family: sans-serif;
+  font-size: 9px;
+  opacity: 0.5;
+  letter-spacing: .5px;
+  font-weight: 400;
+  text-transform: uppercase;
 }

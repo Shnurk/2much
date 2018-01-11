@@ -24,7 +24,7 @@ function buildBasePage (props) {
     body: skin.layout.render({
       noPadding: props.type === 'main',
       content: buildContent(props),
-      noFooter: true
+      noFooter: props.type === 'main'
     })
   })
 }

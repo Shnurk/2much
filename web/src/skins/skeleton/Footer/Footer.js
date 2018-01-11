@@ -7,6 +7,23 @@ global.skin.Footer = {
 }
 
 function renderFooter () {
+  return `
+    <div class="footer">
+      <div class="footer__socials">
+        <a class="footer__socialsItem" href="https://facebook.com/againstmanagement" target="_blank">
+          <img class="socials__image" src="/images/facebook.png" />
+        </a>
+        <a class="footer__socialsItem" href="https://instagram.com/againstmanagement" target="_blank">
+          <img class="socials__image" src="/images/instagram.png" />
+        </a>
+        <a class="footer__socialsItem" href="https://vk.com/againstmanagement" target="_blank">
+          <img class="socials__image" src="/images/vk.png" />
+        </a>
+      </div>
+      <div class="footer__rights">© 2Much Model Management, 2018</div>
+    </div>
+  `
+
   return (
     b('Footer', [
       b('Footer__socials', (
@@ -26,7 +43,7 @@ function renderFooter () {
         ))
       )),
       b('Footer__rights', (
-        '© 2Much Model Management, 2017'
+        '© 2Much Model Management, 2018'
       ))
     ])
   )
