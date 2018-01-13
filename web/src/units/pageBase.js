@@ -67,7 +67,7 @@ function buildContent (props) {
 
         titles.push({ text: title.slice(0, index) })
         titles.push({ text: model.name, url: `/models/${model.slug}` })
-        title = title.split('}')[1]
+        title = title.split('}').slice(1).join('}')
       }
 
       if (title) {
