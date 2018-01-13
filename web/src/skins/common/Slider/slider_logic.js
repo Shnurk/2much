@@ -34,6 +34,9 @@ function goToNextPhoto () {
     activePhotoIndex += 1
     const $photo = getPhotoByIndex(activePhotoIndex)
     const x = -$photo.offsetLeft + -$photo.offsetWidth + viewWidth
+    const delta = Math.abs(x - prevX)
+    $slider.classList.toggle('slider_faster', delta === 400)
+
     if (x === prevX) {
       goToNextPhoto()
     } else {
@@ -51,6 +54,9 @@ function goToPrevPhoto () {
     activePhotoIndex -= 1
     const $photo = getPhotoByIndex(activePhotoIndex)
     const x = -$photo.offsetLeft
+    const delta = Math.abs(x - prevX)
+    $slider.classList.toggle('slider_faster', delta === 400)
+
     if (x === prevX) {
       goToPrevPhoto()
     } else {

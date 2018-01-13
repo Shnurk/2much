@@ -22,6 +22,10 @@
   height: 100%;
 }
 
+.slider_faster .slider__line {
+  transition: transform 0.4s ease;
+}
+
 .slider__photo {
   flex-shrink: 0;
   background-size: cover;
