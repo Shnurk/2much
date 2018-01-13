@@ -63,6 +63,7 @@ display: none;
 
 .model__book {
   display: flex;
+  width: 100vw;
 }
 
 .model__info {
@@ -82,6 +83,7 @@ display: none;
 
 .model__photos {
   display: flex;
+  width: 100vw;
 }
 
 .model__img {

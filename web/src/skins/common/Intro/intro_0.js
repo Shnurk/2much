@@ -9,6 +9,7 @@ if (location.pathname === '/') {
 
 function showNextImg() {
   const $active = $('.intro__content_active')
+  if (!$active) return
   const $next = $active.nextElementSibling || $active.parentElement.firstElementChild
   $next.classList.add('intro__content_active')
   $active.classList.remove('intro__content_active')
@@ -16,6 +17,7 @@ function showNextImg() {
 
 function showPrevImg() {
   const $active = $('.intro__content_active')
+  if (!$active) return
   const $prev = $active.previousElementSibling || $active.parentElement.lastElementChild
   $prev.classList.add('intro__content_active')
   $active.classList.remove('intro__content_active')

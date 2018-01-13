@@ -120,22 +120,11 @@ function buildContent (props) {
       const { height, chest, waist, hips, shoe, hair, eyes } = p.params
       const photosPrepared = []
 
-      let isNeedToFillVertical = false
       photos.forEach(photo => {
-        const isVertical = photo.ratio < 1
-        const url = `/media/large/${photo.fileName}`
-        if (isVertical) {
-          if (isNeedToFillVertical) {
-            photosPrepared[photosPrepared.length - 1].push(url)
-            isNeedToFillVertical = false
-          } else {
-            photosPrepared.push([ url ])
-            isNeedToFillVertical = true
-          }
-        } else {
-          photosPrepared.push(url)
-          isNeedToFillVertical = false
-        }
+        photosPrepared.push({
+          url: `/media/large/${photo.fileName}`,
+          vertical: photo.ratio < 1
+        })
       })
 
       return skin.Model.render({
