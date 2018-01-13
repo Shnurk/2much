@@ -38,8 +38,8 @@ function goToNextPhoto () {
       goToNextPhoto()
     } else {
       $line.style.transform = `translateX(${x}px)`
+      prevX = x
     }
-    prevX = x
   }
 
   toggleNext(activePhotoIndex < photosCount - 1)
@@ -55,8 +55,8 @@ function goToPrevPhoto () {
       goToPrevPhoto()
     } else {
       $line.style.transform = `translateX(${x}px)`
+      prevX = x
     }
-    prevX = x
   }
 
   togglePrev(activePhotoIndex > 0)
