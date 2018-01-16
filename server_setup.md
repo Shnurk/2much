@@ -104,12 +104,6 @@ security:
 // Authentication database is a database where user was created.
 
 
-## Install PM2
-
-> sudo chown imkost /usr/lib/node_modules/
-> sudo npm install pm2 -g
-
-
 ## Install Passenger (Ubuntu 16.04 LTC)
 // for other systems check out https://www.phusionpassenger.com/library/install/standalone/install/oss/
 
