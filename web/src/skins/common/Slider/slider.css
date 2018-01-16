@@ -1,105 +1,4 @@
 .slider {
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.slider__view {
-  width: 800px;
-  height: 100%;
-  position: relative;
-  margin: 0 auto;
-}
-
-.slider__line {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  transition: transform 0.5s ease;
-  height: 100%;
-}
-
-.slider_faster .slider__line {
-  transition: transform 0.4s ease;
-}
-
-.slider__photo {
-  flex-shrink: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  height: 500px;
-}
-.slider__photo_v {
-  width: 400px;
-}
-.slider__photo_h {
-  width: 800px;
-}
-
-.slider__imageWrap {
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
-  background-size: cover;
-  background-position: center;
-}
-
-.slider__image {
-  display: none;
-  /*display: block;*/
-  opacity: 0;
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.slider__go {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.slider__go_prev {
-  left: 0;
-}
-.slider__go_next {
-  right: 0;
-}
-.slider_canGoNext .slider__go_next,
-.slider_canGoPrev .slider__go_prev {
-  cursor: pointer;
-}
-
-.slider__go:before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  transition: background 0.3s ease;
-}
-.slider__go_prev:before {
-  left: 0;
-  right: 400px;
-}
-.slider__go_next:before {
-  left: 400px;
-  right: 0;
-}
-.slider__go:hover:before {
-  background: rgba(255, 255, 255, 0.8);
-}
-
-/*.slider {
   overflow: hidden;
   width: 100vw;
   position: relative;
@@ -166,12 +65,16 @@
   transition: transform 0.5s ease;
 }
 
-.slider__photo {
+.slider__slide {
+  width: 800px;
   height: 500px;
   flex-shrink: 0;
   position: relative;
   display: flex;
+}
 
+.slider__photo {
+  width: 100%;
   margin: 5px;
 
   background-position: center;
@@ -183,13 +86,5 @@
   top: 5px;
   bottom: 5px;
   right: 5px;
-  left: 5px;
+  left: 5px;*/
 }
-
-.slider__photo_v {
-  width: 390px;
-}
-.slider__photo_h {
-  width: 790px;
-}
-*/

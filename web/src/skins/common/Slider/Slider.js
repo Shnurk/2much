@@ -6,36 +6,32 @@ global.skin.Slider = {
 
 /**
  * props = {
- *   photos: [
- *     { url, vertical: Boolean }
- *     ...
- *   ]
+ *   photos: URL[]
  * }
  */
 function renderSlider(props) {
   return `
-    <div class="slider slider_first slider_canGoNext">
+    <div class="slider slider_first">
       ${props.photos.length > 1 ? `
-        <div class="slider__go slider__go_prev" onclick="Slider.prev()"></div>
-        <div class="slider__go slider__go_next" onclick="Slider.next()"></div>
+        <div class="slider__prev" onclick="prevSlide()"></div>
+        <div class="slider__next" onclick="nextSlide()"></div>
       ` : ''}
-      <div class="slider__view">
+      <div class="slider__content">
         <div class="slider__line">
-          ${props.photos.map((p, i) => `
-            <div
-              class="slider__photo slider__photo_${p.vertical ? 'v' : 'h'}"
-              data-index="${i}"
-            >
-              <div class="slider__imageWrap" style="background-image: url('${p.url}')"></div>
-              <img class="slider__image" src="${p.url}" />
+          ${props.photos.map(p => `
+            <div class="slider__slide">
+              ${[].concat(p).map(photo => `
+                <div class="slider__photo" style="background-image: url('${photo}')"></div>
+              `).join('')}
             </div>
           `).join('')}
         </div>
       </div>
+
+      <div class="slider__overlay slider__overlay_left"></div>
+      <div class="slider__overlay slider__overlay_right"></div>
     </div>
   `
-  // <div class="slider__overlay slider__overlay_left"></div>
-  // <div class="slider__overlay slider__overlay_right"></div>
 }
 
 })()
