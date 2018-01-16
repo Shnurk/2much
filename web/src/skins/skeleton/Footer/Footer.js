@@ -20,7 +20,7 @@ function renderFooter () {
           <img class="socials__image" src="/images/vk.png" />
         </a>
       </div>
-      <div class="footer__rights">© 2Much Model Management, 2018</div>
+      <div class="footer__rights">© Against Model Management, 2018</div>
     </div>
   `
 

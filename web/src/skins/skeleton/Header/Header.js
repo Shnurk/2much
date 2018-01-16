@@ -10,7 +10,10 @@ function renderHeader () {
   return (
     b('Header', [
       b({ class: 'Header__menu' }, leftMenu.map(renderMenuItem)),
-      b({ class: 'Header__logo', tag: 'a', href: '/' }, 'AGAINST'),
+      b({ class: 'Header__logo', tag: 'a', href: '/' }, [
+        b({ class: 'Header__logoFirstLine' }, 'AGAINST'),
+        b({ class: 'Header__logoSecondLine' }, 'management'),
+      ]),
       b({ class: 'Header__menu' }, rightMenu.map(renderMenuItem))
     ])
   )
@@ -30,11 +33,11 @@ function renderMenuItem (item) {
 
 var leftMenu = [
   { title: 'Models', url: '/models' },
-  { title: 'News', url: '/news' }
+  // { title: 'News', url: '/news' }
 ]
 
 var rightMenu = [
-  { title: 'About', url: '/about' },
+  // { title: 'About', url: '/about' },
   { title: 'Contact', url: '/contact' }
   // { title: 'Join', url: '/join' }
 ]

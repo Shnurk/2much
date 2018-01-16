@@ -5,7 +5,7 @@ const static = requireSrc('/static')
 
 const MainCtrl = module.exports = {
   manage (app) {
-    app.get('/', main)
+    app.get('/', models)
     app.get('/news', news)
     app.get('/news/:slug', article)
     app.get('/models', models)

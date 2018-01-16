@@ -2,8 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #efefef;
   background: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.Header:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  border: 1px solid transparent;
+  height: 0;
+  border-bottom-color: black;
+  opacity: 0.1;
+  left: 0;
+  right: 0;
+  transform: scaleY(0.5);
 }
 
 .Header__logo {
@@ -13,9 +26,47 @@
   color: #111;
   outline: none;
   position: absolute;
+  text-align: center;
+
+  width: 160px;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.Header__logoFirstLine {
+  font-size: 29px;
+  display: inline-block;
+  position: relative;
+}
+
+.Header__logoFirstLine:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  border: 1px solid transparent;
+  border-bottom-color: #000;
+  height: 0;
+  opacity: 0.6;
+  transform: scaleY(0.5);
+}
+
+.Header__logoSecondLine {
+  font-size: 12px;
+  position: relative;
+  letter-spacing: 3.5px;
+  margin-top: 1px;
+}
+
+.Header__logoSecondLine:after {
+  content: '';
+  position: absolute;
   left: 0;
   right: 0;
-  text-align: center;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to top, #fff, transparent);
 }
 
 .Header__menu {

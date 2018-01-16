@@ -7,7 +7,7 @@ global.skin.Contact = {
 function renderContact (props) {
   return q.html`
     <div class="Contacts">
-      <div class="Contacts__title">Our contacts</div>
+      <div class="Contacts__title">CONTACT US</div>
       ${contacts.map(c => `
         <div class="Contacts__item">
           <div class="Contacts__itemRow Contacts__itemRow_title">${c.name}</div>
@@ -24,7 +24,7 @@ var contacts = [
   {
     name: 'Alexey Vlasov',
     position: 'CEO & Founder',
-    email: 'alexey.vlasov@againstmanagement.com',
+    email: 'hello@againstmanagement.com',
     phone: '+7 (931) 251-84-44'
   }
 ]

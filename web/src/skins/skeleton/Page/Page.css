@@ -1,6 +1,6 @@
 .Page {
-  font-family: 'Nunito Sans', sans-serif;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif, Geneva, arial, Tahoma, verdana;
+  /*font-family: 'Nunito Sans', sans-serif;*/
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', cursive, Geneva, arial, Tahoma, verdana;
   font-weight: 300;
   font-size: 14px;
   height: 100%;
