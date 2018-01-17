@@ -10,12 +10,12 @@ function renderContact (props) {
       <div class="Contacts__title">CONTACT US</div>
       ${contacts.map(c => `
         <div class="Contacts__item">
-          <div class="Contacts__itemRow Contacts__itemRow_title">${c.name}</div>
           <a class="Contacts__itemRow Contacts__itemRow_link" href="mailto:${c.email}">${c.email}</a>
         </div>
       `).join('')}
     </div>
   `
+  // <div class="Contacts__itemRow Contacts__itemRow_title">${c.name}</div>
 }
 
 var contacts = [
