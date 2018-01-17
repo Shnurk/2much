@@ -47,7 +47,7 @@
 .Header__logoFirstLine:after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: 1px;
   left: -2px;
   right: -2px;
   border: 1px solid transparent;
@@ -61,7 +61,7 @@
   font-size: 12px;
   position: relative;
   letter-spacing: 3.5px;
-  margin-top: 1px;
+  margin-top: -2px;
 }
 
 .Header__logoSecondLine:after {
