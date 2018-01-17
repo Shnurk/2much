@@ -20,7 +20,7 @@ function buildBasePage (props) {
   return skin.page.render({
     js: props.js,
     css: props.css,
-    title: '2much',
+    title: 'AGAINST MANAGEMENT',
     body: skin.layout.render({
       noPadding: props.type === 'main',
       content: buildContent(props),
