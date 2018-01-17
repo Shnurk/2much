@@ -25,6 +25,10 @@ function renderPage (props, children = '') {
         Brick.render({ tag: 'meta', charset: 'utf-8' }),
         Brick.render({ tag: 'title' }, props.title),
         renderCSS('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400'),
+        `<script>
+          const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+          document.querySelector('html').classList.toggle('safari', isSafari)
+        </script>`,
         css.map(renderCSS)
       ]),
       Brick.render({ tag: 'body', class: 'Page__body' }, [

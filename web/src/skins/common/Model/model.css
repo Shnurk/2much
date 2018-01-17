@@ -16,7 +16,10 @@
   margin-right: 10px;
   font-size: 25px;
   font-weight: 400;
+}
 
+.safari .model__firstname {
+  font-weight: 300;
 }
 
 .model__lastname {

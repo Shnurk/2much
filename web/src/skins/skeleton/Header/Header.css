@@ -31,12 +31,17 @@
   width: 160px;
   left: 50%;
   margin-left: -80px;
+  font-weight: 200;
 }
 
 .Header__logoFirstLine {
   font-size: 29px;
   display: inline-block;
   position: relative;
+}
+
+.safari .Header__logoFirstLine {
+  font-weight: 200;
 }
 
 .Header__logoFirstLine:after {

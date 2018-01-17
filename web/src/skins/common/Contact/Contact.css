@@ -8,6 +8,10 @@
   width: 900px;
 }
 
+.safari .Contacts__title {
+  font-weight: 200;
+}
+
 .Contacts__item {
 
 }
@@ -15,6 +19,9 @@
 .Contacts__itemRow {
   font-size: 18px;
   margin-bottom: 10px;
+}
+.safari .Contacts__itemRow {
+  font-weight: 200;
 }
 .Contacts__itemRow:last-child {
   margin-bottom: 0;
@@ -29,4 +36,8 @@
   font-weight: 600;
   font-size: 19px;
   margin-bottom: 11px;
+}
+
+.safari .Contacts__itemRow_title {
+  font-weight: 500;
 }

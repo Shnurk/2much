@@ -13,7 +13,6 @@ function renderContact (props) {
           <div class="Contacts__itemRow Contacts__itemRow_title">${c.name}</div>
           <div class="Contacts__itemRow">${c.position}</div>
           <a class="Contacts__itemRow Contacts__itemRow_link" href="mailto:${c.email}">${c.email}</a>
-          <div class="Contacts__itemRow">${c.phone}</div>
         </div>
       `).join('')}
     </div>
@@ -22,7 +21,7 @@ function renderContact (props) {
 
 var contacts = [
   {
-    name: 'Alexey Vlasov',
+    name: 'Alexey',
     position: 'CEO & Founder',
     email: 'hello@againstmanagement.com',
     phone: '+7 (931) 251-84-44'
