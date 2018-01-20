@@ -32,6 +32,8 @@ const config = {
       '/images': './images/',
     }
     : {
+      '/media': './media/',
+      '/images': './images/',
       '/build': './src/build/'
     }
 }

@@ -20,6 +20,7 @@ function buildBasePage (props) {
   return skin.page.render({
     js: props.js,
     css: props.css,
+    withMetrika: global.isProd,
     title: 'AGAINST MANAGEMENT',
     body: skin.layout.render({
       noPadding: props.type === 'main',
