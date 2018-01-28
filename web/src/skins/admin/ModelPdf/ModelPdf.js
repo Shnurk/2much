@@ -128,13 +128,13 @@ function renderModelPdf (model) {
             position: absolute;
             left: 0;
             top: 0;
-            font-size: 12px;
+            font-size: 11px;
           }
 
           .ModelPdf__logo {
             position: absolute;
             right: 0;
-            top: -8px;
+            top: -12px;
             height: 40px;
           }
 
