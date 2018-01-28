@@ -134,7 +134,7 @@ async function personPdf (req, res) {
 async function createPdf (personId) {
   var model = await db.person.getById(personId)
   var html = ModelPdf.render(model)
-  var url = `http://localhost:3000/admin/models/${personId}/pdf`
+  // var url = `http://localhost:3000/admin/models/${personId}/pdf`
 
   // phantomHtmlToPdf({ url }, (err, pdf) => {
   //   console.log(err)
@@ -146,7 +146,7 @@ async function createPdf (personId) {
     format: `A4`,
     orientation: `landscape`,
     // TODO: pass base as argument
-    base: process.env.SERVER ? `http://againstmanagement.com` : `http://localhost:3000`
+    base: global.isProd ? `http://againstmanagement.com` : `http://localhost:3000`
   }
 
   htmlToPdf.create(html, pdfOpts).toFile(`pdf/${model.slug}.pdf`, (err, result) => {
