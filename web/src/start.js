@@ -30,7 +30,7 @@ var config = {
       '/': './src/',
       '/media': './media/',
       '/images': './images/',
-      '/pdf': './pdfs/',
+      '/pdf': './pdf/',
     }
     : {
       '/media': './media/',

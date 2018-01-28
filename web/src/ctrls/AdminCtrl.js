@@ -146,10 +146,10 @@ async function createPdf (personId) {
     format: `A4`,
     orientation: `landscape`,
     // TODO: pass base as argument
-    base: `http://localhost:3000`
+    base: process.env.SERVER ? `http://againstmanagement.com` : `http://localhost:3000`
   }
 
-  htmlToPdf.create(html, pdfOpts).toFile(`pdfs/${model.slug}.pdf`, (err, result) => {
+  htmlToPdf.create(html, pdfOpts).toFile(`pdf/${model.slug}.pdf`, (err, result) => {
     if (err) {
       console.error(`>> pdf error`)
       console.error(err)
