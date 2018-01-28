@@ -8,6 +8,20 @@ const Resumable = g.Resumable
 })()
 
 dragula(Array.from($$('.AdminForm__section_upload .AdminForm__content')))
+dragula(Array.from($$('.AdminLayout__items')))
+  .on('drop', () => {
+    requestAnimationFrame(() => {
+      var $items = Array.from($$('.AdminList__item'))
+      var orders = $items.map($item => $item.dataset.id)
+
+      fetch('/admin/set-models-order', {
+        method: 'POST',
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(orders)
+      })
+    })
+  })
 
 window.skin.AdminForm = {
   _onSaveClick: onSaveClick,

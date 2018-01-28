@@ -78,22 +78,25 @@ function buildListPersons (persons) {
   return (
     $('AdminLayout', [
       $({ tag: 'a', class: 'AdminList__new', href: '/admin/models/new' }, '[+]'),
-      persons.reverse().map((person, i) => (
-        $({
-          tag: 'a',
-          class: 'AdminList__item',
-          href: `/admin/models/${person._id}`
-        }, [
+      $('AdminLayout__items', (
+        persons.reverse().map((person, i) => (
           $({
-            class: 'AdminList__itemPhoto',
-            style: person.cover && (
-              `background-image: url('/media/small/${person.cover.fileName}')`
-            )
-          }),
-          $('AdminList__itemName', (
-            person.name || $({ tag: 'i' }, 'no name')
-          ))
-        ])
+            tag: 'a',
+            class: 'AdminList__item',
+            'data-id': person._id,
+            href: `/admin/models/${person._id}`
+          }, [
+            $({
+              class: 'AdminList__itemPhoto',
+              style: person.cover && (
+                `background-image: url('/media/small/${person.cover.fileName}')`
+              )
+            }),
+            $('AdminList__itemName', (
+              person.name || $({ tag: 'i' }, 'no name')
+            ))
+          ])
+        ))
       ))
     ])
   )

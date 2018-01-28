@@ -34,7 +34,7 @@ async function getByIds (ids) {
 }
 
 async function getAll () {
-  const persons = await Person.find().toArray()
+  const persons = await Person.find().sort({ order: -1 }).toArray()
   return Promise.all(persons.map(wrapPerson))
 }
 

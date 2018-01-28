@@ -1,9 +1,10 @@
 /* global nav */
 /* global unit */
-const db = requireSrc('/db')
-const static = requireSrc('/static')
+var db = requireSrc('/db')
+var static = requireSrc('/static')
+var pdf = require('html-pdf')
 
-const MainCtrl = module.exports = {
+var MainCtrl = module.exports = {
   manage (app) {
     app.get('/', models)
     app.get('/news', news)
@@ -11,6 +12,7 @@ const MainCtrl = module.exports = {
     app.get('/models', models)
     app.get('/models/:slug', model)
     app.get('/models/:slug/polaroids', modelPolaroids)
+    app.get('/models/:slug/pdf', modelPdf)
     app.get('/about', about)
     app.get('/contact', contact)
     app.get('/join', join)
@@ -18,13 +20,13 @@ const MainCtrl = module.exports = {
 }
 
 
-const js = static.js('common')
-const css = static.css('common')
+var js = static.js('common')
+var css = static.css('common')
 
 async function main (req, res) {
-  const articles = await db.article.getAll()
-  const lastArticles = articles.slice(0, 4)
-  const page = unit.page.build({ js, css, type: 'main', articles: lastArticles })
+  var articles = await db.article.getAll()
+  var lastArticles = articles.slice(0, 4)
+  var page = unit.page.build({ js, css, type: 'main', articles: lastArticles })
   res.end(page)
 }
 
@@ -45,8 +47,9 @@ async function article (req, res) {
 }
 
 async function models (req, res) {
-  const persons = await db.person.getAll()
-  const page = unit.page.build({ js, css, type: 'models', persons })
+  var persons = await db.person.getAll()
+  persons = persons.reverse()
+  var page = unit.page.build({ js, css, type: 'models', persons })
   res.end(page)
 }
 
@@ -69,6 +72,10 @@ async function modelPolaroids (req, res) {
   await modelView(req, res, true)
 }
 
+async function modelPdf (req, res) {
+  res.end('ok')
+}
+
 function about (req, res) {
   const page = unit.page.build({ js, css, type: 'about' })
   res.end(page)
@@ -83,8 +90,6 @@ function join (req, res) {
   const page = unit.page.build({ js, css, type: 'join' })
   res.end(page)
 }
-
-
 
 
 

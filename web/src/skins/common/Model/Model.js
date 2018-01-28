@@ -19,6 +19,16 @@ global.skin.Model = {
  */
 function renderModel(props) {
   const params = props.params
+  var shoeAmerican = {
+    36: 5,
+    37: 6,
+    38: 7,
+    39: 8,
+    40: 9,
+    41: 10,
+    42: 11,
+    43: 12
+  }[params.shoe]
 
   return `
     <div class="model">
@@ -30,9 +40,7 @@ function renderModel(props) {
         <a href="${props.bookUrl}" class="model__menuItem">book</a>
         <a href="${props.polaroidsUrl}" class="model__menuItem">polaroids</a>
         <a href="${props.instagramUrl}" target="_blank" class="model__menuItem">instagram</a>
-        <!--
         <a href="${props.pdfUrl}" class="model__menuItem">pdf</a>
-        -->
       </div>
 
       <div class="model__book">
@@ -42,23 +50,23 @@ function renderModel(props) {
       <div class="model__measures">
         <div class="model__measure model__height">
           <div class="measure__title">height:</div>
-          <div class="measure__value">${params.height.cm}/${params.height.inch}</div>
+          <div class="measure__value">${params.height.cm} / ${params.height.inch}</div>
         </div>
         <div class="model__measure model__chest">
           <div class="measure__title">chest:</div>
-          <div class="measure__value">${params.chest.cm}/${params.chest.inch}</div>
+          <div class="measure__value">${params.chest.cm} / ${params.chest.inch}</div>
         </div>
         <div class="model__measure model__waist">
           <div class="measure__title">waist:</div>
-          <div class="measure__value">${params.waist.cm}/${params.waist.inch}</div>
+          <div class="measure__value">${params.waist.cm} / ${params.waist.inch}</div>
         </div>
         <div class="model__measure model__hips">
           <div class="measure__title">hips:</div>
-          <div class="measure__value">${params.hips.cm}/${params.hips.inch}</div>
+          <div class="measure__value">${params.hips.cm} / ${params.hips.inch}</div>
         </div>
         <div class="model__measure model__shoe">
           <div class="measure__title">shoe:</div>
-          <div class="measure__value">${params.shoe}</div>
+          <div class="measure__value">${params.shoe} / ${shoeAmerican}</div>
         </div>
         <div class="model__measure model__hair">
           <div class="measure__title">hair:</div>

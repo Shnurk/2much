@@ -144,7 +144,7 @@ function buildContent (props) {
         bookUrl: `/models/${p.slug}`,
         polaroidsUrl: `/models/${p.slug}/polaroids`,
         instagramUrl: `https://instagram.com/${p.instagram}`,
-        pdfUrl: `/models/${p.slug}.pdf`,
+        pdfUrl: `/pdf/${p.slug}.pdf`,
         photos: photosPrepared,
         params: {
           height: { cm: height, inch: cmToInches(height) },

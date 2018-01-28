@@ -2,12 +2,19 @@ const db = requireSrc('/db')
 const static = requireSrc('/static')
 const nav = g.nav
 const AdminView = g.unit.AdminView
+var htmlToPdf = require('html-pdf')
+var fs = require('fs')
+// var phantom = require(`phantomjs-prebuilt`)
+// var phantomHtmlToPdf = require(`phantom-html-to-pdf`)({ phantomPath: phantom.path })
+var ModelPdf = global.skin.ModelPdf
 
 const PASSWORD = 'aga1Nst'
 
 const AdminCtrl = module.exports = {
   manage (app) {
+    app.post('/admin/set-models-order', needLogin, setModelsOrder)
     app.use('/admin/models/new', needLogin, personCreate)
+    app.get('/admin/models/:personId/pdf', personPdf)
     app.post('/admin/models/:personId/delete', needLogin, personDelete)
     app.use('/admin/models/:personId', needLogin, personEdit)
     app.use('/admin/models', needLogin, personList)
@@ -26,6 +33,12 @@ const AdminCtrl = module.exports = {
 
 const js = static.js('common', 'admin')
 const css = static.css('common', 'admin')
+
+async function setModelsOrder (req, res) {
+  const modelIds = req.body
+  await db.setModelsOrder(modelIds)
+  res.json({ success: true })
+}
 
 function logout(req, res) {
   res.cookie('pass', null)
@@ -83,7 +96,8 @@ async function personList (req, res) {
 async function personCreate (req, res) {
   if (req.method === 'POST') {
     const data = JSON.parse(req.body.json)
-    await db.person.create(data)
+    var personId = await db.person.create(data)
+    createPdf(personId)
     res.json({ ok: 1 })
   }
   res.end(AdminView.build({ type: 'create', what: 'person', css, js }))
@@ -95,6 +109,7 @@ async function personEdit (req, res) {
   if (req.method === 'POST') {
     const data = JSON.parse(req.body.json)
     await db.person.update(personId, data)
+    createPdf(personId)
     res.json({ ok: 1 })
   }
 
@@ -109,7 +124,41 @@ async function personEdit (req, res) {
 }
 
 
+async function personPdf (req, res) {
+  var modelId = req.params.personId
+  var model = await db.person.getById(modelId)
+  var html = ModelPdf.render(model)
+  res.end(html)
+}
 
+async function createPdf (personId) {
+  var model = await db.person.getById(personId)
+  var html = ModelPdf.render(model)
+  var url = `http://localhost:3000/admin/models/${personId}/pdf`
+
+  // phantomHtmlToPdf({ url }, (err, pdf) => {
+  //   console.log(err)
+  //   var pdfFile = fs.createWriteStream(`pdfs/${model.slug}.pdf`)
+  //   pdf.stream.pipe(pdfFile)
+  // })
+
+  var pdfOpts = {
+    format: `A4`,
+    orientation: `landscape`,
+    // TODO: pass base as argument
+    base: `http://localhost:3000`
+  }
+
+  htmlToPdf.create(html, pdfOpts).toFile(`pdfs/${model.slug}.pdf`, (err, result) => {
+    if (err) {
+      console.error(`>> pdf error`)
+      console.error(err)
+    } else {
+      console.log(result)
+      console.log(`pdf create success for ${model.slug}`)
+    }
+  })
+}
 
 
 

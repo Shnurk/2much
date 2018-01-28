@@ -1,28 +1,28 @@
-const path = require('path')
-const express = require('express')
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
-const serveStatic = require('serve-static')
-const connectMongo = require('connect-mongo')
-const multipart = require('connect-multiparty')
+var path = require('path')
+var express = require('express')
+var bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
+var serveStatic = require('serve-static')
+var connectMongo = require('connect-mongo')
+var multipart = require('connect-multiparty')
 
-const env = process.env.NODE_ENV
-const port = process.env.PORT || 3000
-const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/against'
+var env = process.env.NODE_ENV
+var port = process.env.PORT || 3000
+var mongoUrl = process.env.MONGO_URL || 'mongodb://localhost:27017/against'
 
 global.requireSrc = requireSrc
 global.env = env
 global.isDev = env === 'development'
 global.isProd = env === 'production'
 
-const static = requireSrc('/static')
+var static = requireSrc('/static')
 static.server().forEach(requireSrc)
-const db = requireSrc('/db')
-const MainCtrl = requireSrc('/ctrls/MainCtrl')
-const AdminCtrl = requireSrc('/ctrls/AdminCtrl')
-const UploadCtrl = requireSrc('/ctrls/UploadCtrl')
+var db = requireSrc('/db')
+var MainCtrl = requireSrc('/ctrls/MainCtrl')
+var AdminCtrl = requireSrc('/ctrls/AdminCtrl')
+var UploadCtrl = requireSrc('/ctrls/UploadCtrl')
 
-const config = {
+var config = {
   port,
   mongoUrl,
   public: isDev
@@ -30,6 +30,7 @@ const config = {
       '/': './src/',
       '/media': './media/',
       '/images': './images/',
+      '/pdf': './pdfs/',
     }
     : {
       '/media': './media/',

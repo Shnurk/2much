@@ -3,6 +3,8 @@ const { MongoClient, ObjectID } = require('mongodb')
 const db = module.exports = {
   connect,
 
+  setModelsOrder,
+
   _collections: {
     Photo: null,
     Person: null,
@@ -26,4 +28,14 @@ pkFactory.prototype = new Object()
 
 function generateId () {
   return ObjectID().toString()
+}
+
+async function setModelsOrder (modelIds) {
+  const Models = db._collections.Person
+  return Promise.all(modelIds.map((modelId, i) => {
+    return Models.update(
+      { _id: modelId },
+      { $set: { order: i } }
+    )
+  }))
 }

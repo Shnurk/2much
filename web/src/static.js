@@ -41,6 +41,7 @@ var data = {
 
     '/skins/admin/AdminMenu/AdminMenu.js',
     '/skins/admin/AdminLayout/AdminLayout.js',
+    '/skins/admin/ModelPdf/ModelPdf.js',
     '/units/Uploader.js',
     '/units/AdminView.js'
   ],
