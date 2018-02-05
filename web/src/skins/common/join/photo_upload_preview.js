@@ -1,3 +1,13 @@
+window.Join = {
+  _onSubmit (e) {
+
+  }
+}
+
+
+
+
+
 function onUploadImageChange(input) {
   var file = input.files[0];
   var reader = new FileReader();

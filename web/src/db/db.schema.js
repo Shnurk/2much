@@ -37,3 +37,20 @@ Photo {
   ratio: Number
 }
 
+Applications {
+  _id: ID
+  name: String
+  city: String
+  phone: String
+  email: String
+  social: URL
+  photos: URL[]
+  params: {
+    height: Number
+    chest: Number
+    waist: Number
+    hips: Number
+    shoe: Number
+    age: Number
+  }
+}

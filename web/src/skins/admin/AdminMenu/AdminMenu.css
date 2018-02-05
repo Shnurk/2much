@@ -200,3 +200,20 @@
   align-items: center;
   flex-wrap: nowrap;
 }
+
+
+
+
+
+
+.AdminTable {
+  border-collapse: collapse;
+}
+.AdminTable tr {
+
+}
+.AdminTable td {
+  border: 1px solid gray;
+  padding: 7px 12px;
+  text-align: center;
+}

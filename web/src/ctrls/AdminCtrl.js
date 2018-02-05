@@ -24,6 +24,8 @@ const AdminCtrl = module.exports = {
     app.use('/admin/articles/:articleId', needLogin, articleEdit)
     app.use('/admin/articles', needLogin, articleList)
 
+    app.use('/admin/applications', needLogin, applicationList)
+
     app.get('/admin/api/execute', needLogin, execute)
 
     app.use('/admin/logout', logout)
@@ -33,6 +35,12 @@ const AdminCtrl = module.exports = {
 
 const js = static.js('common', 'admin')
 const css = static.css('common', 'admin')
+
+async function applicationList (req, res) {
+  var applications = await db.getAllApplications()
+  var page = AdminView.build({ type: 'list', css, js, applications })
+  res.end(page)
+}
 
 async function setModelsOrder (req, res) {
   const modelIds = req.body

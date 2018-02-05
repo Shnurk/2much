@@ -16,12 +16,36 @@ var MainCtrl = module.exports = {
     app.get('/about', about)
     app.get('/contact', contact)
     app.get('/join', join)
+    app.post('/join', addApplication)
   }
 }
 
 
 var js = static.js('common')
 var css = static.css('common')
+
+async function addApplication (req, res) {
+  var formData = req.body
+
+  await db.createApplication({
+    name: formData.name,
+    city: formData.city,
+    phone: formData.phone,
+    email: formData.email,
+    social: formData.social,
+    photos: formData.photos,
+    params: {
+      height: formData.height,
+      chest: formData.chest,
+      waist: formData.waist,
+      hips: formData.hips,
+      shoe: formData.shoe,
+      age: formData.age
+    }
+  })
+
+  res.redirect('/join?success')
+}
 
 async function main (req, res) {
   var articles = await db.article.getAll()
@@ -87,9 +111,31 @@ function contact (req, res) {
 }
 
 function join (req, res) {
-  const page = unit.page.build({ js, css, type: 'join' })
+  const success = ('success' in req.query)
+  const page = unit.page.build({ js, css, type: 'join', success })
   res.end(page)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

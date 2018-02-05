@@ -75,6 +75,7 @@ var data = {
     '/skins/common/article/article.css',
     '/skins/common/articleCard/articleCard.css',
     '/skins/common/join/join.css',
+    '/skins/common/join/photo_upload_preview.js',
     '/skins/common/modelCard/modelCard.css',
   ],
 

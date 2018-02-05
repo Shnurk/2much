@@ -7,35 +7,48 @@ skin.join = {
   render: renderJoin
 }
 
+function renderJoin(success) {
+  if (success) {
+    return html(`
+      <div class="titleBlock" style="
+        font-weight: 300;
+        text-align: center;
+        height: 400px;
+        line-height: 400px;
+      ">
+        Thank you
+      </div>
+    `)
+  }
 
-function renderJoin() {
-  return q.html`
-    <div class="join">
+  return html(`
+    <form class="join" action="/join" method="POST" onsubmit="Join._onSubmit(event)">
       <div class="titleBlock">Application</div>
-      <div class="join__requirements">We are open to anyone who over 14 years old.
+      <div class="join__requirements">
+        We are open to anyone who over 14 years old.<br/>
         Your height should be above 170cm for women and 182 for men.
       </div>
       <div class="join__blocks">
         <div class="join__leftBlock">
           <div class="join__infoLine">
             <div class="join__titleLine">Name</div>
-            <input class="join__input" maxlength="50" type="text" />
+            <input class="join__input" maxlength="50" name="name" />
           </div>
           <div class="join__infoLine">
             <div class="join__titleLine">City</div>
-            <input class="join__input" maxlength="50" type="text"/>
+            <input class="join__input" maxlength="50" name="city" />
           </div>
           <div class="join__infoLine">
             <div class="join__titleLine">Phone</div>
-            <input class="join__input" maxlength="50" type="tel"/>
+            <input class="join__input" maxlength="50" type="tel" name="phone" />
           </div>
           <div class="join__infoLine">
             <div class="join__titleLine">Mail</div>
-            <input class="join__input" maxlength="50" type="email"/>
+            <input class="join__input" maxlength="50" type="email" name="email" />
           </div>
           <div class="join__infoLine join__infoLine_socials">
             <div class="join__titleLine">Social</div>
-            <input class="join__input" maxlength="50" type="url"/>
+            <input class="join__input" maxlength="50" name="social" />
           </div>
           <div class="join__infoLine">
             <div class="join__titleLine">Gender</div>
@@ -52,29 +65,29 @@ function renderJoin() {
         <div class="join__measureBlock">
           <div class="join__measure">
             <div class="join__titleLine">Height</div>
-            <input class="join__input join__inputNumber" maxlength="3" type="text" />
+            <input class="join__input join__inputNumber" maxlength="3" name="height" />
           </div>
           <div class="join__measure">
             <div class="join__titleLine">Chest</div>
-            <input class="join__input join__inputNumber" maxlength="2" type="text" />
+            <input class="join__input join__inputNumber" maxlength="2" name="chest" />
           </div>
           <div class="join__measure">
             <div class="join__titleLine">Age</div>
-            <input class="join__input join__inputNumber" maxlength="2" type="text" />
+            <input class="join__input join__inputNumber" maxlength="2" name="age" />
           </div>
         </div>
         <div class="join__measureBlock">
           <div class="join__measure">
             <div class="join__titleLine">Waist</div>
-            <input class="join__input join__inputNumber" maxlength="2" type="text" />
+            <input class="join__input join__inputNumber" maxlength="2" name="waist" />
           </div>
           <div class="join__measure">
             <div class="join__titleLine">Hips</div>
-            <input class="join__input join__inputNumber" maxlength="2" type="text" />
+            <input class="join__input join__inputNumber" maxlength="2" name="hips" />
           </div>
           <div class="join__measure">
             <div class="join__titleLine">Shoe</div>
-            <input class="join__input join__inputNumber" maxlength="2" type="text" />
+            <input class="join__input join__inputNumber" maxlength="2" name="shoe" />
           </div>
         </div>
       </div>
@@ -109,10 +122,14 @@ function renderJoin() {
         3. Wear a swimsuit</br>
         4. Keep your hair pulled back</br>
         5. Be natural, no make up!</br>
-        <button class="button__submit">Submit</button>
+        <button class="button__submit" type="submit">Submit</button>
       </div>
-    </div>
-  `;
+    </form>
+  `)
+}
+
+function html (str) {
+  return str
 }
 
 })()

@@ -37,7 +37,8 @@ function buildAdminView (props) {
       AdminLayout.render({
         menu: [
           { title: 'Models', url: '/admin/models' },
-          { title: 'News', url: '/admin/articles' }
+          { title: 'News', url: '/admin/articles' },
+          { title: 'Applications', url: '/admin/applications' }
         ]
       }, (
         buildContent(props)
@@ -53,6 +54,7 @@ function buildContent (props) {
     return (
       props.persons ? buildListPersons(props.persons) :
       props.articles ? buildListArticles(props.articles) :
+      props.applications ? buildListApplications(props.applications) :
       ''
     )
   }
@@ -251,9 +253,53 @@ function buildFormPerson (person) {
 }
 
 
+function buildListApplications (applications) {
+  applications = applications.reverse()
+  return html(`
+    <div class="AdminLayout">
+      <table class="AdminTable">
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>City</td>
+            <td>Phone</td>
+            <td>Mail</td>
+            <td>Social</td>
+            <td>Age</td>
+            <td>Height</td>
+            <td>Chest</td>
+            <td>Waist</td>
+            <td>Hips</td>
+            <td>Shoe</td>
+          </tr>
+        </thead>
+        <tbody>
+          ${applications.map((application, i) => html(`
+            <tr>
+              <td>${i + 1}</td>
+              <td>${application.name || '—'}</td>
+              <td>${application.city || '—'}</td>
+              <td>${application.phone || '—'}</td>
+              <td>${application.mail || '—'}</td>
+              <td>${application.social || '—'}</td>
+              <td>${application.params.age || '—'}</td>
+              <td>${application.params.height || '—'}</td>
+              <td>${application.params.chest || '—'}</td>
+              <td>${application.params.waist || '—'}</td>
+              <td>${application.params.hips || '—'}</td>
+              <td>${application.params.shoe || '—'}</td>
+            </tr>
+          `)).join('')}
+        </tbody>
+      </table>
+    </div>
+  `)
+}
 
-
-
+function html (str) {
+  return str
+}
 
 
 function buildListArticles (articles) {

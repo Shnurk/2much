@@ -38,8 +38,8 @@ var leftMenu = [
 
 var rightMenu = [
   // { title: 'About', url: '/about' },
-  { title: 'Contact', url: '/contact' }
-  // { title: 'Join', url: '/join' }
+  { title: 'Contact', url: '/contact' },
+  { title: 'Join', url: '/join' }
 ]
 
 })()

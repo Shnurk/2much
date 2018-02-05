@@ -21,6 +21,7 @@ var db = requireSrc('/db')
 var MainCtrl = requireSrc('/ctrls/MainCtrl')
 var AdminCtrl = requireSrc('/ctrls/AdminCtrl')
 var UploadCtrl = requireSrc('/ctrls/UploadCtrl')
+var EmailCtrl = requireSrc('/ctrls/EmailCtrl')
 
 var config = {
   port,

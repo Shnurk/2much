@@ -8,7 +8,10 @@ function renderModelPdf (model) {
   var photoPages = []
   var photoPage = []
 
-  for (var photo of model.book) {
+  var firstPhoto = model.book[0]
+  var book = model.book.slice(1)
+
+  for (var photo of book) {
     var isHorizontal = photo.ratio > 1
 
     if (isHorizontal) {
@@ -94,18 +97,25 @@ function renderModelPdf (model) {
 
           .ModelPdf__firstParam {
             font-style: italic;
-            margin-bottom: 21px;
+            margin-bottom: 18px;
           }
 
           .ModelPdf__firstParamLabel {
             margin-bottom: 4px;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
           }
+
+          .ModelPdf__firstParamValue {
+            font-size: 13px;
+          }
+
           .ModelPdf__firstName {
             font-size: 35px;
             font-style: italic;
-            padding-top: 20px;
-            padding-bottom: 40px;
+            padding-top: 55px;
+            padding-bottom: 32px;
+            font-weight: 300;
           }
 
           .ModelPdf__row_first {
@@ -219,33 +229,33 @@ function renderModelPdf (model) {
                   <div class="ModelPdf__firstParams">
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Height / Heuteur</div>
-                      <div class="ModelPdf__firstPrramValue">${params.height.inch} / ${params.height.cm}</div>
+                      <div class="ModelPdf__firstParamValue">${params.height.inch} / ${params.height.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Waist / Taille</div>
-                      <div class="ModelPdf__firstPrramValue">${params.waist.inch} / ${params.waist.cm}</div>
+                      <div class="ModelPdf__firstParamValue">${params.waist.inch} / ${params.waist.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Hips / Hanches</div>
-                      <div class="ModelPdf__firstPrramValue">${params.hips.inch} / ${params.hips.cm}</div>
+                      <div class="ModelPdf__firstParamValue">${params.hips.inch} / ${params.hips.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Hair / Cheveux</div>
-                      <div class="ModelPdf__firstPrramValue">${params.hair} / ${params.hair}</div>
+                      <div class="ModelPdf__firstParamValue">${params.hair} / ${params.hair}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Eyes / Yeux</div>
-                      <div class="ModelPdf__firstPrramValue">${params.eyes} / ${params.eyes}</div>
+                      <div class="ModelPdf__firstParamValue">${params.eyes} / ${params.eyes}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
                       <div class="ModelPdf__firstParamLabel">Shoe / Chaussures</div>
-                      <div class="ModelPdf__firstPrramValue">${shoeAmerican} / ${params.shoe}</div>
+                      <div class="ModelPdf__firstParamValue">${shoeAmerican} / ${params.shoe}</div>
                     </div>
                   </div>
                 </div>
                 <div class="ModelPdf__side">
                   <div class="ModelPdf__photoWrap">
-                    <img class="ModelPdf__photo" src="/media/large/${model.cover.fileName}" />
+                    <img class="ModelPdf__photo" src="/media/large/${firstPhoto.fileName}" />
                   </div>
                 </div>
               </div>

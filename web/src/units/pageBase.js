@@ -166,7 +166,7 @@ function buildContent (props) {
       break
 
     case 'join':
-      return skin.join.render()
+      return skin.join.render(props.success)
       break
   }
 }
