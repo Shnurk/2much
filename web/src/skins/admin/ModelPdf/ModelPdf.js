@@ -57,11 +57,13 @@ function renderModelPdf (model) {
       <head>
         <meta charset="utf-8" />
         <title>model</title>
+        <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
         <style>
           .ModelPdf__body {
             padding: 0;
             margin: 0;
-            font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', cursive, Geneva, arial, Tahoma, verdana;'
+            font-family: 'Racing Sans One';
+            // font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', cursive, Geneva, arial, Tahoma, verdana;'
           }
 
           .ModelPdf__page {
@@ -97,17 +99,17 @@ function renderModelPdf (model) {
 
           .ModelPdf__firstParam {
             font-style: italic;
-            margin-bottom: 18px;
+            margin-bottom: 14px;
           }
 
           .ModelPdf__firstParamLabel {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
           }
 
           .ModelPdf__firstParamValue {
-            font-size: 13px;
+            font-size: 12px;
           }
 
           .ModelPdf__firstName {
