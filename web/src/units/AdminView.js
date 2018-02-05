@@ -20,7 +20,7 @@ function buildAdminView (props) {
   return Page.render({
     js: props.js,
     css: props.css,
-    title: '2much | Admin',
+    title: 'AGAINST | Admin',
     body:
       props.type === 'login' ? `
         <form class="adminForm" action="${props.originalUrl}" method="POST">
