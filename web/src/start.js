@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser')
 var serveStatic = require('serve-static')
 var connectMongo = require('connect-mongo')
 var multipart = require('connect-multiparty')
+var Ddos = require('ddos')
 
 var env = process.env.NODE_ENV
 var port = process.env.PORT || 3000
@@ -47,17 +48,19 @@ var config = {
 
 
 async function startServer (params) {
-  const app = express()
+  var app = express()
+  var ddos = new Ddos({ burst: 10, limit: 15 })
 
   // Register middlewares
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({ extended: true }))
   app.use(cookieParser())
   app.use(multipart())
+  // app.use(ddos.express)
 
   // Serve public
   Object.keys(params.public).forEach(url => {
-    const folder = params.public[url]
+    var folder = params.public[url]
     app.use(url, serveStatic(folder))
   })
 

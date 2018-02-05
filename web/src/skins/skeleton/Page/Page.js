@@ -68,15 +68,17 @@ function renderPage (props, children = '') {
   )
 }
 
+var rand = Math.round(Math.random() * 1000).toString()
+
 function renderCSS (url) {
   return (
-    Brick.render({ tag: 'link', rel: 'stylesheet', href: url })
+    Brick.render({ tag: 'link', rel: 'stylesheet', href: `${url}?v=${rand}` })
   )
 }
 
 function renderJS (url) {
   return (
-    Brick.render({ tag: 'script', src: url })
+    Brick.render({ tag: 'script', src: `${url}?v=${rand}` })
   )
 }
 

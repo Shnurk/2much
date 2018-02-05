@@ -17,6 +17,7 @@
     "connect-multiparty": "^2.1.0",
     "cookie-parser": "^1.4.3",
     "cyrillic-to-translit-js": "^2.0.0",
+    "ddos": "^0.1.25",
     "express": "^4.16.2",
     "express-resumablejs": "^0.3.3",
     "html-pdf": "^2.2.0",

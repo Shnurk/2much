@@ -61,6 +61,7 @@ var data = {
     '/skins/skeleton/Footer/Footer.css',
     '/skins/skeleton/Header/Header.css',
     '/skins/skeleton/Layout/Layout.css',
+    '/skins/skeleton/Layout/Layout_0.js',
     '/skins/skeleton/Page/Page.css',
     '/skins/common/News/News.css',
     '/skins/common/Slider/slider.css',

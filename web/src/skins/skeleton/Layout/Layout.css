@@ -36,3 +36,29 @@
 .Layout__footer {
 
 }
+
+
+.Layout__overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.6s ease;
+}
+
+.Layout__overlay_hide {
+  opacity: 0;
+}
+
+.Layout__logoImage {
+  position: relative;
+  top: -50px;
+  height: 150px;
+}

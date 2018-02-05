@@ -23,6 +23,7 @@ function buildBasePage (props) {
     withMetrika: global.isProd,
     title: 'AGAINST MANAGEMENT',
     body: skin.layout.render({
+      isMain: props.isMain,
       noPadding: props.type === 'main',
       content: buildContent(props),
       noFooter: props.type === 'main'
@@ -111,7 +112,7 @@ function buildContent (props) {
           waist: { cm: waist, inch: cmToInches(waist) },
           hips: { cm: hips, inch: cmToInches(hips) },
         })
-      })
+      }).join('')
       break
 
     case 'model':

@@ -6,7 +6,7 @@ var pdf = require('html-pdf')
 
 var MainCtrl = module.exports = {
   manage (app) {
-    app.get('/', models)
+    app.get('/', main)
     app.get('/news', news)
     app.get('/news/:slug', article)
     app.get('/models', models)
@@ -70,6 +70,12 @@ async function article (req, res) {
   }
 }
 
+async function main (req, res) {
+  var persons = await db.person.getAll()
+  persons = persons.reverse()
+  var page = unit.page.build({ js, css, type: 'models', persons, isMain: true })
+  res.end(page)
+}
 async function models (req, res) {
   var persons = await db.person.getAll()
   persons = persons.reverse()

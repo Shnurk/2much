@@ -20,13 +20,24 @@ function renderLayout (props) {
   const withFooter = !props.noFooter
   const noPadding = props.noPadding ? 'Layout_noPadding' : ''
 
-  return (
-    $(`Layout ${noPadding}`, [
-      $('Layout__header', Header.render()),
-      $('Layout__content', props.content),
-      withFooter && $('Layout__footer', Footer.render())
-    ])
-  )
+  return html(`
+    <div class="Layout ${noPadding}">
+      <div class="Layout__header">${Header.render()}</div>
+      <div class="Layout__content">${props.content}</div>
+      ${withFooter && html(`
+        <div class="Layout__footer">${Footer.render()}</div>
+      `)}
+      ${props.isMain && html(`
+        <div class="Layout__overlay" onclick="Layout._onOverlayClick(this)">
+          <img class="Layout__logoImage" src="/images/logo.png" />
+        </div>
+      `)}
+    </div>
+  `)
+}
+
+function html (str) {
+  return str
 }
 
 })()

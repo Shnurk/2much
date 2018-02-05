@@ -19,8 +19,20 @@
   transform: scaleY(0.5);
 }
 
+.Header__logoImage {
+  height: 46px;
+  width: 162px;
+}
+
 .Header__logo {
-  font-size: 25px;
+  height: 46px;
+  width: 162px;
+
+  position: absolute;
+  left: 50%;
+  margin-left: -81px;
+
+  /*font-size: 25px;
   letter-spacing: 1px;
   text-decoration: none;
   color: #111;
@@ -31,7 +43,7 @@
   width: 160px;
   left: 50%;
   margin-left: -80px;
-  font-weight: 200;
+  font-weight: 200;*/
 }
 
 .Header__logoFirstLine {
