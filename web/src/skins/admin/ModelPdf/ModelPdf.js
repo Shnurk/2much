@@ -57,13 +57,12 @@ function renderModelPdf (model) {
       <head>
         <meta charset="utf-8" />
         <title>model</title>
-        <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+
         <style>
           .ModelPdf__body {
             padding: 0;
             margin: 0;
-            font-family: 'Racing Sans One';
-            // font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Roboto', 'Open Sans', 'Helvetica Neue', cursive, Geneva, arial, Tahoma, verdana;'
+            font-family: Verdana;
           }
 
           .ModelPdf__page {
