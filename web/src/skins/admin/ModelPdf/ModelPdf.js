@@ -62,7 +62,7 @@ function renderModelPdf (model) {
           .ModelPdf__body {
             padding: 0;
             margin: 0;
-            font-family: Verdana;
+            font-family: Verdana, sans-serif;
           }
 
           .ModelPdf__page {
