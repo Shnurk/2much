@@ -24,20 +24,20 @@ function renderLayout (props) {
     <div class="Layout ${noPadding}">
       <div class="Layout__header">${Header.render()}</div>
       <div class="Layout__content">${props.content}</div>
-      ${withFooter && html(`
+      ${withFooter ? html(`
         <div class="Layout__footer">${Footer.render()}</div>
-      `)}
-      ${props.isMain && html(`
+      `) : ''}
+      ${props.isMain ? html(`
         <div class="Layout__overlay" onclick="Layout._onOverlayClick(this)">
           <img class="Layout__logoImage" src="/images/logo.png" />
         </div>
-      `)}
+      `) : ''}
     </div>
   `)
 }
 
 function html (str) {
-  return str
+  return str || ''
 }
 
 })()
