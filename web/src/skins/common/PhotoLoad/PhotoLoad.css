@@ -13,15 +13,16 @@
   bottom: 5px;
   left: 5px;
   right: 5px;
-  height: 4px;
+  height: 6px;
   background: #fff;
-  border: 1px solid #5491f1;
+  border: 1px solid #3a6ab5;
 }
 
 .PhotoLoad__progressLine {
   height: 100%;
-  background: #5491f1;
+  background: #3a6ab5;
   width: 0;
+  transition: width 0.2s ease;
 }
 
 .PhotoLoad_removed {

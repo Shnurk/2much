@@ -113,12 +113,13 @@
   border: 1px solid #111;
   border-radius: 2px;
   overflow: hidden;
-
+  cursor: pointer;
 }
 
 .upload__imgSample {
   display: block;
   width: 100%;
+  display: none;
 }
 
 .upload__button {
@@ -138,6 +139,9 @@
   color: #111;
   transition: background 0.1s linear;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -188,4 +192,18 @@
 
 .button__submit:hover {
   color: #fff;
+}
+
+.upload__photo .PhotoLoad {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.upload__photo .PhotoLoad__remove {
+  display: none !important;
 }

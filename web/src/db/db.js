@@ -42,6 +42,16 @@ async function createApplication (application) {
 async function getAllApplications () {
   var Applications = db._collections.Applications
   var applications = await Applications.find().toArray()
+  applications = await Promise.all(
+    applications.map(async a => {
+      return {
+        ...a,
+        photos: await db.photo.getByIds(a.photos || []),
+      }
+    })
+  )
+  console.log(applications.map(a => a.photos[0]));
+
   return applications
 }
 

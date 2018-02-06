@@ -23,7 +23,10 @@ function setPhoto ($self, photo) {
 function setProgress ($self, percent) {
   const $line = $self.$(sel.progressLine)
   if (percent === 100) {
-    $line.parentElement.remove()
+    $line.style.width = `${percent}%`
+    setTimeout(() => {
+      $line.parentElement.remove()
+    }, 200)
   } else {
     $line.style.width = `${percent}%`
   }

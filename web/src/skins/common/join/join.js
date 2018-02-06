@@ -93,24 +93,32 @@ function renderJoin(success) {
       </div>
       <div class="uploadPhotos">
         <div class="upload__photo">
-          <img class="upload__imgSample" src="images/snap1.jpg" />
-          <button class="upload__button">Upload</button>
+          <img class="upload__imgSample" src="/images/snap1.jpg" />
+          <div class="upload__button">Upload</div>
+          <!--
           <input class="upload__input" type="file" onchange="onUploadImageChange(this)" accept="image/jpeg,image/jpg,image/png" />
+          -->
         </div>
         <div class="upload__photo">
-          <img class="upload__imgSample" src="images/snap2.jpg" />
-          <button class="upload__button">Upload</button>
+          <img class="upload__imgSample" src="/images/snap2.jpg" />
+          <div class="upload__button">Upload</div>
+          <!--
           <input class="upload__input" type="file" onchange="onUploadImageChange(this)" accept="image/jpeg,image/jpg,image/png" />
+          -->
         </div>
         <div class="upload__photo">
-          <img class="upload__imgSample" src="images/snap3.jpg" />
-          <button class="upload__button">Upload</button>
+          <img class="upload__imgSample" src="/images/snap3.jpg" />
+          <div class="upload__button">Upload</div>
+          <!--
           <input class="upload__input" type="file" onchange="onUploadImageChange(this)" accept="image/jpeg,image/jpg,image/png" />
+          -->
         </div>
         <div class="upload__photo">
-          <img class="upload__imgSample" src="images/snap4.jpg" />
-          <button class="upload__button">Upload</button>
+          <img class="upload__imgSample" src="/images/snap4.jpg" />
+          <div class="upload__button">Upload</div>
+          <!--
           <input class="upload__input" type="file" onchange="onUploadImageChange(this)" accept="image/jpeg,image/jpg,image/png" />
+          -->
         </div>
       </div>
       <div class="join__titleRequirements">

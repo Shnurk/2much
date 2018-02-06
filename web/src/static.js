@@ -76,17 +76,19 @@ var data = {
     '/skins/common/article/article.css',
     '/skins/common/articleCard/articleCard.css',
     '/skins/common/join/join.css',
-    '/skins/common/join/photo_upload_preview.js',
+    '/skins/common/join/Join_photoUpload.js',
+    // '/skins/common/join/photo_upload_preview.js',
     '/skins/common/modelCard/modelCard.css',
+
+    '/skins/common/PhotoLoad/PhotoLoad.css',
+    '/skins/common/PhotoLoad/PhotoLoad.js',
+    '/skins/common/PhotoLoad/PhotoLoad_0.js',
   ],
 
   admin: [
     '/lib/dragula.min.js',
     '/lib/dragula.min.css',
 
-    '/skins/common/PhotoLoad/PhotoLoad.css',
-    '/skins/common/PhotoLoad/PhotoLoad.js',
-    '/skins/common/PhotoLoad/PhotoLoad_0.js',
     '/skins/common/DropZone/DropZone.css',
     '/skins/admin/AdminLayout/AdminLayout.css',
     '/skins/admin/AdminMenu/AdminMenu.css',

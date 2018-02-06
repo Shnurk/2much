@@ -272,25 +272,36 @@ function buildListApplications (applications) {
             <td>Waist</td>
             <td>Hips</td>
             <td>Shoe</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
-          ${applications.map((application, i) => html(`
-            <tr>
-              <td>${i + 1}</td>
-              <td>${application.name || '—'}</td>
-              <td>${application.city || '—'}</td>
-              <td>${application.phone || '—'}</td>
-              <td>${application.mail || '—'}</td>
-              <td>${application.social || '—'}</td>
-              <td>${application.params.age || '—'}</td>
-              <td>${application.params.height || '—'}</td>
-              <td>${application.params.chest || '—'}</td>
-              <td>${application.params.waist || '—'}</td>
-              <td>${application.params.hips || '—'}</td>
-              <td>${application.params.shoe || '—'}</td>
-            </tr>
-          `)).join('')}
+          ${applications.map((application, i) => {
+            var photos = application.photos || []
+            return html(`
+              <tr>
+                <td>${i + 1}</td>
+                <td>${application.name || '—'}</td>
+                <td>${application.city || '—'}</td>
+                <td>${application.phone || '—'}</td>
+                <td>${application.mail || '—'}</td>
+                <td>${application.social || '—'}</td>
+                <td>${application.params.age || '—'}</td>
+                <td>${application.params.height || '—'}</td>
+                <td>${application.params.chest || '—'}</td>
+                <td>${application.params.waist || '—'}</td>
+                <td>${application.params.hips || '—'}</td>
+                <td>${application.params.shoe || '—'}</td>
+                <td>${photos[0] ? `<img class="AdminTable__preview" src="/media/small/${photos[0].fileName}" />` : '—'}</td>
+                <td>${photos[1] ? `<img class="AdminTable__preview" src="/media/small/${photos[1].fileName}" />` : '—'}</td>
+                <td>${photos[2] ? `<img class="AdminTable__preview" src="/media/small/${photos[2].fileName}" />` : '—'}</td>
+                <td>${photos[3] ? `<img class="AdminTable__preview" src="/media/small/${photos[3].fileName}" />` : '—'}</td>
+              </tr>
+            `)
+          }).join('')}
         </tbody>
       </table>
     </div>

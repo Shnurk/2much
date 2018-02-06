@@ -33,7 +33,7 @@ async function addApplication (req, res) {
     phone: formData.phone,
     email: formData.email,
     social: formData.social,
-    photos: formData.photos,
+    photos: [].concat(formData.photo),
     params: {
       height: formData.height,
       chest: formData.chest,
