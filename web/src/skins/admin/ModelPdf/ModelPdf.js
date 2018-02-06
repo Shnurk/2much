@@ -112,9 +112,9 @@ function renderModelPdf (model) {
           }
 
           .ModelPdf__firstName {
-            font-size: 35px;
+            font-size: 28px;
             font-style: italic;
-            padding-top: 55px;
+            padding-top: 93px;
             padding-bottom: 32px;
             font-weight: 300;
           }
@@ -145,7 +145,7 @@ function renderModelPdf (model) {
           .ModelPdf__logo {
             position: absolute;
             right: 0;
-            top: -12px;
+            top: -7px;
             height: 40px;
           }
 
@@ -167,13 +167,14 @@ function renderModelPdf (model) {
 
           .ModelPdf__param {
             float: left;
-            margin-right: 10px;
+            width: 200px;
+            margin-bottom: 7px;
           }
 
           .ModelPdf__param:after {
-            float: left;
-            content: '/';
-            margin-left: 10px;
+            // float: left;
+            // content: '/';
+            // margin-left: 10px;
           }
           .ModelPdf__param:last-child:after {
             display: none;
@@ -229,27 +230,27 @@ function renderModelPdf (model) {
                   </div>
                   <div class="ModelPdf__firstParams">
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Height / Heuteur</div>
+                      <div class="ModelPdf__firstParamLabel">Height</div>
                       <div class="ModelPdf__firstParamValue">${params.height.inch} / ${params.height.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Waist / Taille</div>
+                      <div class="ModelPdf__firstParamLabel">Waist</div>
                       <div class="ModelPdf__firstParamValue">${params.waist.inch} / ${params.waist.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Hips / Hanches</div>
+                      <div class="ModelPdf__firstParamLabel">Hips</div>
                       <div class="ModelPdf__firstParamValue">${params.hips.inch} / ${params.hips.cm}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Hair / Cheveux</div>
+                      <div class="ModelPdf__firstParamLabel">Hair</div>
                       <div class="ModelPdf__firstParamValue">${params.hair} / ${params.hair}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Eyes / Yeux</div>
+                      <div class="ModelPdf__firstParamLabel">Eyes</div>
                       <div class="ModelPdf__firstParamValue">${params.eyes} / ${params.eyes}</div>
                     </div>
                     <div class="ModelPdf__firstParam">
-                      <div class="ModelPdf__firstParamLabel">Shoe / Chaussures</div>
+                      <div class="ModelPdf__firstParamLabel">Shoe</div>
                       <div class="ModelPdf__firstParamValue">${shoeAmerican} / ${params.shoe}</div>
                     </div>
                   </div>
@@ -280,20 +281,14 @@ function renderModelPdf (model) {
               <div class="ModelPdf__row ModelPdf__row_footer">
                 <div class="ModelPdf__params">
                   <div class="ModelPdf__paramsRow">
-                    ${renderParam('Height', params.height.inch)}
-                    ${renderParam('Waist', params.waist.inch)}
-                    ${renderParam('Hips', params.hips.inch)}
-                    ${renderParam('Hair', params.hair)}
-                    ${renderParam('Eyes', params.eyes)}
-                    ${renderParam('Shoe', shoeAmerican)}
+                    ${renderParam('Height', params.height.inch, params.height.cm)}
+                    ${renderParam('Waist', params.waist.inch, params.waist.cm)}
+                    ${renderParam('Hips', params.hips.inch, params.hips.cm)}
                   </div>
                   <div class="ModelPdf__paramsRow">
-                    ${renderParam('Heuteur', params.height.cm)}
-                    ${renderParam('Taille', params.waist.cm)}
-                    ${renderParam('Hanches', params.hips.cm)}
-                    ${renderParam('Cheveux', params.hair)}
-                    ${renderParam('Yeux', params.eyes)}
-                    ${renderParam('Chaussures', params.shoe)}
+                    ${renderParam('Hair', params.hair)}
+                    ${renderParam('Eyes', params.eyes)}
+                    ${renderParam('Shoe', shoeAmerican, params.shoe)}
                   </div>
                 </div>
                 <img class="ModelPdf__logo" src="/images/logo.png" />
@@ -306,11 +301,11 @@ function renderModelPdf (model) {
   `)
 }
 
-function renderParam (label, value) {
+function renderParam (label, value, value2) {
   return html(`
     <div class="ModelPdf__param">
       <div class="ModelPdf__paramLabel">${label}:</div>
-      <div class="ModelPdf__paramValue">${value}</div>
+      <div class="ModelPdf__paramValue">${value}${value2 ? ` / ${value2}` : ''}</div>
     </div>
   `)
 }

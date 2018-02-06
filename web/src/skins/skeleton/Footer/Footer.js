@@ -6,23 +6,31 @@ global.skin.Footer = {
   render: renderFooter
 }
 
+function html (str) {
+  return str
+}
+
 function renderFooter () {
-  return `
+  return html(`
     <div class="footer">
       <div class="footer__socials">
+        <!--
         <a class="footer__socialsItem" href="https://facebook.com/againstmanagement" target="_blank">
           <img class="socials__image" src="/images/facebook.png" />
         </a>
+        -->
         <a class="footer__socialsItem" href="https://instagram.com/againstmanagement" target="_blank">
           <img class="socials__image" src="/images/instagram.png" />
         </a>
+        <!--
         <a class="footer__socialsItem" href="https://vk.com/againstmanagement" target="_blank">
           <img class="socials__image" src="/images/vk.png" />
         </a>
+        -->
       </div>
       <div class="footer__rights">© Against Model Management, 2018</div>
     </div>
-  `
+  `)
 
   return (
     b('Footer', [
@@ -50,18 +58,18 @@ function renderFooter () {
 }
 
 var socials = [
-  {
-    url: 'https://facebook.com/2much',
-    image: '/images/facebook.png',
-  },
+  // {
+  //   url: 'https://facebook.com/2much',
+  //   image: '/images/facebook.png',
+  // },
   {
     url: 'https://instagram.com/2much',
     image: '/images/instagram.png'
   },
-  {
-    url: 'https://vk.com/2much',
-    image: '/images/vk.png'
-  }
+  // {
+  //   url: 'https://vk.com/2much',
+  //   image: '/images/vk.png'
+  // }
 ]
 
 })()

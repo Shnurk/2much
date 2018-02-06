@@ -3,9 +3,20 @@
 var db = requireSrc('/db')
 var static = requireSrc('/static')
 var pdf = require('html-pdf')
+var emailer = require('./emailer')
 
 var MainCtrl = module.exports = {
   manage (app) {
+    emailer.init({
+      host: 'smtp.yandex.ru',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'join@againstmanagement.com',
+        pass: 'Fernando891'
+      }
+    })
+
     app.get('/', main)
     app.get('/news', news)
     app.get('/news/:slug', article)
@@ -27,7 +38,7 @@ var css = static.css('common')
 async function addApplication (req, res) {
   var formData = req.body
 
-  await db.createApplication({
+  var applicationId = await db.createApplication({
     name: formData.name,
     city: formData.city,
     phone: formData.phone,
@@ -42,6 +53,17 @@ async function addApplication (req, res) {
       shoe: formData.shoe,
       age: formData.age
     }
+  })
+
+  var application = await db.getApplication(applicationId)
+
+  emailer.sendEmail({
+    fromName: 'AGAINST',
+    fromEmail: 'join@againstmanagement.com',
+    subject: 'AGAINST: New Application',
+    to: 'join@againstmanagement.com',
+    text: '',
+    html: generateEmail(application)
   })
 
   res.redirect('/join?success')
@@ -119,9 +141,42 @@ function contact (req, res) {
 function join (req, res) {
   const success = ('success' in req.query)
   const page = unit.page.build({ js, css, type: 'join', success })
+
   res.end(page)
 }
 
+function generateEmail (application) {
+  return html(`
+    <ul>
+      <li><b>Name: </b>${application.name}</li>
+      <li><b>City: </b>${application.city}</li>
+      <li><b>Phone: </b>${application.phone}</li>
+      <li><b>Mail: </b>${application.email}</li>
+      <li><b>Social: </b>${application.social}</li>
+      <li><b>Height: </b>${application.params.height}</li>
+      <li><b>Waist: </b>${application.params.waist}</li>
+      <li><b>Chest: </b>${application.params.chest}</li>
+      <li><b>Hips: </b>${application.params.hips}</li>
+      <li><b>Age: </b>${application.params.age}</li>
+      <li><b>Shoe: </b>${application.params.shoe}</li>
+    </ul>
+    <hr />
+    <div><h4>Photos:</h4></div>
+    ${application.photos.map(p => html(`
+      <a
+        href="https://againstmanagement.com/media/large/${p.fileName}"
+        target="_blank"
+        style="display: block"
+      >
+        <img width="300" src="https://againstmanagement.com/media/small/${p.fileName}" />
+      </a>
+    `)).join('')}
+  `)
+}
+
+function html (str) {
+  return str
+}
 
 
 
@@ -180,3 +235,4 @@ function join (req, res) {
 //     state.addModel(model)
 //     break
 // }
+

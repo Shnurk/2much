@@ -25,7 +25,8 @@ function renderMenuItem (item) {
     b({
       class: 'Header__menuItem',
       tag: 'a',
-      href: item.url
+      href: item.url,
+      target: item.newTab && '_blank'
     }, (
       item.title
     ))
@@ -39,6 +40,7 @@ var leftMenu = [
 
 var rightMenu = [
   // { title: 'About', url: '/about' },
+  { title: 'Instagram', url: 'https://instagram.com/againstmanagement', newTab: true },
   { title: 'Contact', url: '/contact' },
   { title: 'Join', url: '/join' }
 ]

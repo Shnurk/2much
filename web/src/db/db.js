@@ -6,6 +6,7 @@ const db = module.exports = {
   setModelsOrder,
   createApplication,
   getAllApplications,
+  getApplication,
 
   _collections: {
     Photo: null,
@@ -36,7 +37,8 @@ function generateId () {
 
 async function createApplication (application) {
   var Applications = db._collections.Applications
-  await Applications.insert(application)
+  var result = await Applications.insert(application)
+  return result.ops[0]._id
 }
 
 async function getAllApplications () {
@@ -50,9 +52,23 @@ async function getAllApplications () {
       }
     })
   )
-  console.log(applications.map(a => a.photos[0]));
 
   return applications
+}
+
+async function getApplication (id) {
+  var Applications = db._collections.Applications
+  var applications = await Applications.find({ _id: id }).toArray()
+  applications = await Promise.all(
+    applications.map(async a => {
+      return {
+        ...a,
+        photos: await db.photo.getByIds(a.photos || []),
+      }
+    })
+  )
+
+  return applications[0]
 }
 
 async function setModelsOrder (modelIds) {
