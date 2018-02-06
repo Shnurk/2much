@@ -164,11 +164,11 @@ function generateEmail (application) {
     <div><h4>Photos:</h4></div>
     ${application.photos.map(p => html(`
       <a
-        href="https://againstmanagement.com/media/large/${p.fileName}"
+        href="http://againstmanagement.com/media/large/${p.fileName}"
         target="_blank"
         style="display: block"
       >
-        <img width="300" src="https://againstmanagement.com/media/small/${p.fileName}" />
+        <img width="300" src="http://againstmanagement.com/media/small/${p.fileName}" />
       </a>
     `)).join('')}
   `)
