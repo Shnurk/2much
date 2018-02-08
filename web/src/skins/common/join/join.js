@@ -16,7 +16,7 @@ function renderJoin(success) {
         height: 400px;
         line-height: 400px;
       ">
-        Thank you
+        Thank you :)
       </div>
     `)
   }

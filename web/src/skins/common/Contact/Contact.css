@@ -16,6 +16,20 @@
 
 }
 
+.About__email {
+  text-align: center;
+}
+
+.Contacts__email {
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  color: #222;
+  font-weight: 300;
+  font-size: 26px;
+}
+
 .Contacts__itemRow {
   font-size: 18px;
   margin-bottom: 10px;

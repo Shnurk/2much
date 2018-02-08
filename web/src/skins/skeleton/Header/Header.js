@@ -35,14 +35,14 @@ function renderMenuItem (item) {
 
 var leftMenu = [
   { title: 'Models', url: '/models' },
+  { title: 'Join', url: '/join' }
   // { title: 'News', url: '/news' }
 ]
 
 var rightMenu = [
-  // { title: 'About', url: '/about' },
-  { title: 'Instagram', url: 'https://instagram.com/againstmanagement', newTab: true },
+  { title: 'About', url: '/about' },
   { title: 'Contact', url: '/contact' },
-  { title: 'Join', url: '/join' }
+  { title: 'Instagram', url: 'https://instagram.com/againstmanagement', newTab: true },
 ]
 
 })()

@@ -25,7 +25,10 @@ function renderAbout() {
 var title = 'Against Model Management'
 
 var paragraphs = `
-  Some words about Against Model Management
+  We are the model agency from Saint-Petersburg, Russia.<br/><br/>
+  Our main idea is a friendly relationship between booker’s team and models.
+  We are always glad to meet up models, stylists, photographers, and agencies
+  all around the world. And we think this information is enough :)
 `
 
 })()

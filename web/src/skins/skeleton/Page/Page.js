@@ -25,6 +25,9 @@ function renderPage (props, children = '') {
       Brick.render({ tag: 'head' }, [
         Brick.render({ tag: 'meta', charset: 'utf-8' }),
         Brick.render({ tag: 'title' }, props.title),
+        `
+          <link rel="shortcut icon" href="/images/favicon.png"></link>
+        `,
         renderCSS('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400'),
         `<script>
           const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
