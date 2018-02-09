@@ -23,10 +23,10 @@
 .Contacts__email {
   display: block;
   text-decoration: none;
-  padding-top: 15px;
+  margin-top: 20px;
   color: #222;
   font-weight: 300;
-  font-size: 22px;
+  text-align: center;
 }
 
 .Contacts__itemRow {
