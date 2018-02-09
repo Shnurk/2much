@@ -25,8 +25,8 @@ function renderJoin(success) {
     <form class="join" action="/join" method="POST" onsubmit="Join._onSubmit(event)">
       <div class="titleBlock">Application</div>
       <div class="join__requirements">
-        We are open to anyone who over 14 years old.<br/>
-        Your height should be above 170cm for women and 182 for men.
+        We are open to anyone over 14 years old.<br/>
+        Your height should be above 170cm for women and 182cm for men.
       </div>
       <div class="join__blocks">
         <div class="join__leftBlock">

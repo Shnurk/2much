@@ -21,13 +21,12 @@
 }
 
 .Contacts__email {
+  display: block;
   text-decoration: none;
-  text-align: center;
-  font-size: 18px;
-  padding: 20px;
+  padding-top: 15px;
   color: #222;
   font-weight: 300;
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .Contacts__itemRow {

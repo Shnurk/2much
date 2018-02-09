@@ -24,7 +24,7 @@ var MainCtrl = module.exports = {
     app.get('/models/:slug', model)
     app.get('/models/:slug/polaroids', modelPolaroids)
     app.get('/models/:slug/pdf', modelPdf)
-    app.get('/about', about)
+    // app.get('/about', about)
     app.get('/contact', contact)
     app.get('/join', join)
     app.post('/join', addApplication)

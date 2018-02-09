@@ -16,15 +16,21 @@ function renderContact () {
     b('About', (
       b('About__container', [
         b('About__title', title),
-        b('About__text About__email', text)
+        b('About__text', text)
       ])
     ))
   )
 }
 
-var title = 'Contact us'
+var title = 'Against Model Management'
 var email = 'hello@againstmanagement.com'
 var paragraphs = `
+  We are the model agency from Saint-Petersburg, Russia.
+
+  Our main idea is a friendly relationship between booker’s team and models.
+  We are always glad to meet up models, stylists, photographers, and agencies
+  all around the world. And we think this information is enough :)
+
   <a class="Contacts__email" href="mailto:${email}">${email}</a>
 `
 
