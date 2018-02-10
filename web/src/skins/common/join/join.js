@@ -117,9 +117,8 @@ function renderJoin(success) {
       <div class="join__requirements">
         1. Do not pose</br>
         2. Shoot with a simple background behind you</br>
-        3. Wear a swimsuit</br>
-        4. Keep your hair pulled back</br>
-        5. Be natural, no make up!</br>
+        3. Keep your hair pulled back</br>
+        4. Be natural, no make up!</br>
         <button class="button__submit" type="submit">Submit</button>
       </div>
     </form>
