@@ -113,6 +113,7 @@ function serialize () {
   if (isModels()) {
     return {
       name: $('input[name=name]').value,
+      hidden: $('input[name=hidden]').checked,
       gender: Number($('select[name=gender]').value),
       instagram: $('input[name=instagram]').value,
       cover: getPhotos('cover')[0] || null,

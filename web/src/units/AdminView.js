@@ -112,6 +112,7 @@ function buildFormPerson (person) {
     slug: '',
     gender: 0,
     instagram: '',
+    hidden: false,
     params: {
       height: null,
       chest: null,
@@ -133,6 +134,13 @@ function buildFormPerson (person) {
     <div class="AdminForm">
       <div class="AdminForm__body">
         <div class="AdminForm__column">
+          <label class="AdminForm__section">
+            <div class="AdminForm__content">
+              <input class="" name="hidden" type="checkbox" value="1" ${person.hidden ? 'checked="checked"' : ''} />
+              <span>Hidden?</span>
+            </div>
+          </label>
+
           <label class="AdminForm__section">
             <div class="AdminForm__title">Name</div>
             <div class="AdminForm__content">

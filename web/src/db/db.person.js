@@ -46,6 +46,7 @@ async function wrapPerson (person) {
     gender: person.gender,
     instagram: person.instagram,
     params: person.params,
+    hidden: person.hidden,
     cover: await db.photo.getById(person.cover),
     book: await db.photo.getByIds(person.book),
     polaroids: await db.photo.getByIds(person.polaroids)
