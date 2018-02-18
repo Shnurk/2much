@@ -9,6 +9,7 @@ global.skin.Model = {
 /**
  * props = {
  *   name: String
+ *   isBook: Boolean
  *   bookUrl: URL
  *   polaroidsUrl: URL
  *   instagramUrl: URL
@@ -44,7 +45,7 @@ function renderModel(props) {
       </div>
 
       <div class="model__book">
-        ${Slider.render({ photos: props.photos })}
+        ${Slider.render({ photos: props.photos, firstPhotoAlone: props.isBook })}
       </div>
 
       <div class="model__measures">

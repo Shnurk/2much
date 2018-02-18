@@ -7,11 +7,12 @@ global.skin.Slider = {
 /**
  * props = {
  *   photos: URL[]
+ *   firstPhotoAlone: [Boolean]
  * }
  */
 function renderSlider(props) {
   return `
-    <div class="slider slider_first">
+    <div class="slider slider_first ${props.firstPhotoAlone ? 'slider_firstPhotoAlone' : ''}">
       ${props.photos.length > 1 ? `
         <div class="slider__prev" onclick="prevSlide()"></div>
         <div class="slider__next" onclick="nextSlide()"></div>

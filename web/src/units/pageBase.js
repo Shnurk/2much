@@ -122,11 +122,16 @@ function buildContent (props) {
       const { height, chest, waist, hips, shoe, hair, eyes } = p.params
       const photosPrepared = []
 
+      let isFirst = props.type === 'model'
       let isNeedToFillVertical = false
       photos.forEach(photo => {
         const isVertical = photo.ratio < 1
         const url = `/media/large/${photo.fileName}`
-        if (isVertical) {
+
+        if (isFirst) {
+          photosPrepared.push([ url ])
+          isFirst = false
+        } else if (isVertical) {
           if (isNeedToFillVertical) {
             photosPrepared[photosPrepared.length - 1].push(url)
             isNeedToFillVertical = false
@@ -147,6 +152,7 @@ function buildContent (props) {
         instagramUrl: `https://instagram.com/${p.instagram}`,
         pdfUrl: `/pdf/${p.slug}.pdf`,
         photos: photosPrepared,
+        isBook: true,
         params: {
           height: { cm: height, inch: cmToInches(height) },
           chest: { cm: chest, inch: cmToInches(chest) },

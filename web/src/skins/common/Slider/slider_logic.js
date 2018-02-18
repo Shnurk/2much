@@ -1,3 +1,5 @@
+var $ = document.querySelector.bind(document)
+var $$ = document.querySelectorAll.bind(document)
 var slidesCount = document.querySelectorAll('.slider__slide').length;
 var active = 0;
 var RIGHT_ARROW = 39;
@@ -11,6 +13,15 @@ function nextSlide() {
   }
   if (active === slidesCount - 1) {
     document.querySelector('.slider').classList.add('slider_last')
+  }
+
+
+  var $alone = $('.slider_firstPhotoAlone');
+  if ($alone && active === 1) {
+    // var $firstPhoto = $('.slider__slide .slider__photo')
+    // setTimeout(() => {
+    //   $firstPhoto.style.transform = 'translateX(200px)';
+    // }, 500)
   }
 }
 

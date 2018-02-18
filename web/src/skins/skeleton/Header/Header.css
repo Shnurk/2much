@@ -8,12 +8,12 @@
 }
 
 .Header__center {
-  width: 900px;
+  width: 790px;
   position: absolute;
   left: 50%;
   display: flex;
-  margin-left: -450px;
-  justify-content: space-around;
+  margin-left: -395px;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -54,6 +54,9 @@
 .Header__logo {
   height: 46px;
   width: 162px;
+  position: absolute;
+  left: 50%;
+  margin-left: -81px;
 
   /*position: absolute;
   left: 50%;

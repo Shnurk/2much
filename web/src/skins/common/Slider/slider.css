@@ -4,6 +4,24 @@
   position: relative;
 }
 
+.slider_firstPhotoAlone .slider__slide:first-child .slider__photo {
+  width: 50%;
+  margin: 5px auto;
+}
+.slider_firstPhotoAlone.slider_first .slider__overlay_right {
+  width: calc((100vw - 800px) / 2 + 195px);
+  margin: 5px auto;
+}
+.slider_firstPhotoAlone.slider_first .slider__slide:nth-child(2) {
+  margin-left: -195px;
+}
+.slider__photo {
+  transition: transform 0.5s ease;
+}
+.slider_firstPhotoAlone:not(.slider_first) .slider__slide:first-child .slider__photo {
+  transform: translateX(195px);
+}
+
 .slider__overlay {
   content: '';
   position: absolute;
