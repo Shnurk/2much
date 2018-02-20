@@ -152,7 +152,7 @@ function buildContent (props) {
         instagramUrl: `https://instagram.com/${p.instagram}`,
         pdfUrl: `/pdf/${p.slug}.pdf`,
         photos: photosPrepared,
-        isBook: true,
+        isBook: props.type === 'model',
         params: {
           height: { cm: height, inch: cmToInches(height) },
           chest: { cm: chest, inch: cmToInches(chest) },
