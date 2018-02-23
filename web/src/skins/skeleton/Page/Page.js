@@ -22,6 +22,24 @@ function renderPage (props, children = '') {
   return (
     '<!doctype html>' +
     Brick.render({ tag: 'html', class: 'Page' }, [
+      `
+      <!-- for Google -->
+      <meta name="description" content="Модельное агентство в Санкт-Петербурге"/>
+      <meta name="keywords" content="Модельное агентство в Санкт-Петербурге, Модели спб Россия"/>
+
+      <!-- for Facebook -->
+      <meta property="og:title" content="AGAINST MANAGEMENT"/>
+      <meta property="og:type" content="article"/>
+      <meta property="og:image" content=""/>
+      <meta property="og:url" content="http://againstmanagement.com/"/>
+      <meta property="og:description" content="Модельное агентство в Санкт-Петербурге"/>
+
+      <!-- for Twitter -->
+      <meta name="twitter:card" content="summary"/>
+      <meta name="twitter:title" content="AGAINST MANAGEMENT"/>
+      <meta name="twitter:description" content="Модельное агентство в Санкт-Петербурге"/>
+      <meta name="twitter:image" content=""/>
+      `,
       Brick.render({ tag: 'head' }, [
         Brick.render({ tag: 'meta', charset: 'utf-8' }),
         Brick.render({ tag: 'title' }, props.title),
