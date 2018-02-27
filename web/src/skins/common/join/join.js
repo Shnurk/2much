@@ -12,11 +12,16 @@ function renderJoin(success) {
     return html(`
       <div class="titleBlock" style="
         font-weight: 300;
-        text-align: center;
-        height: 400px;
-        line-height: 400px;
+        width: 430px;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: justify;
+        margin-top: 60px;
       ">
-        Thank you :)
+        Thank you for contacting Against Management.<br/><br/>
+        Our team will review your materials and will get in touch if we're
+        interested in representing you, or if we have any questions.
+        Best of luck! :)
       </div>
     `)
   }

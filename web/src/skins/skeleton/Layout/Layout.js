@@ -29,7 +29,7 @@ function renderLayout (props) {
       `) : ''}
       ${props.isMain ? html(`
         <div class="Layout__overlay" onclick="Layout._onOverlayClick(this)">
-          <img class="Layout__logoImage" src="/images/logo.png" />
+          <img class="Layout__logoImage" src="/images/logo-enter.jpg" />
         </div>
       `) : ''}
     </div>
