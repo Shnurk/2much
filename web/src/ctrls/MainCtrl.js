@@ -13,7 +13,7 @@ var MainCtrl = module.exports = {
       secure: true,
       auth: {
         user: 'join@againstmanagement.com',
-        pass: 'Fernando891'
+        pass: 'Fernando899'
       }
     })
 
