@@ -95,7 +95,7 @@ async function article (req, res) {
 async function main (req, res) {
   var persons = await db.person.getAll()
   persons = persons.reverse().filter(p => !p.hidden)
-  var page = unit.page.build({ js, css, type: 'models', persons, isMain: true })
+  var page = unit.page.build({ js, css, type: 'models', persons })
   res.end(page)
 }
 async function models (req, res) {

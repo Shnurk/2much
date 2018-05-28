@@ -11,11 +11,11 @@ function renderHeader () {
     b('Header', [
       b({ class: 'Header__center' }, [
         b({ class: 'Header__menu' }, leftMenu.map(renderMenuItem)),
-        b({ class: 'Header__logo', tag: 'a', href: '/models' }, [
-          b({ class: 'Header__logoImage', tag: 'img', src: '/images/logo.png' })
-          // b({ class: 'Header__logoFirstLine' }, 'AGAINST'),
-          // b({ class: 'Header__logoSecondLine' }, 'management'),
-        ]),
+        b({
+          class: 'Header__logo',
+          tag: 'a',
+          href: '/models',
+        }, 'Against'),
         b({ class: 'Header__menu' }, rightMenu.map(renderMenuItem)),
       ]),
     ])

@@ -1,8 +1,8 @@
 ;(() => {
 
-const $ = global.skin.Brick.render
-const Header = global.skin.header
-const Footer = global.skin.Footer
+var $ = global.skin.Brick.render
+var Header = global.skin.header
+var Footer = global.skin.Footer
 
 global.skin.layout = {
   render: renderLayout
@@ -17,8 +17,8 @@ global.skin.layout = {
  * }
  */
 function renderLayout (props) {
-  const withFooter = !props.noFooter
-  const noPadding = props.noPadding ? 'Layout_noPadding' : ''
+  var withFooter = !props.noFooter
+  var noPadding = props.noPadding ? 'Layout_noPadding' : ''
 
   return html(`
     <div class="Layout ${noPadding}">
@@ -26,11 +26,6 @@ function renderLayout (props) {
       <div class="Layout__content">${props.content}</div>
       ${withFooter ? html(`
         <div class="Layout__footer">${Footer.render()}</div>
-      `) : ''}
-      ${props.isMain ? html(`
-        <div class="Layout__overlay" onclick="Layout._onOverlayClick(this)">
-          <img class="Layout__logoImage" src="/images/logo-enter.jpg" />
-        </div>
       `) : ''}
     </div>
   `)

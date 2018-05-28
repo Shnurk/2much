@@ -1,23 +1,34 @@
 .About {
+  margin-top: 100px;
+  margin-bottom: 60px;
 }
 
 .About__title {
-  text-align: center;
   margin-bottom: 40px;
   font-weight: 300;
   font-size: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.5;
+
+
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #444;
+  letter-spacing: 1.3px;
 }
 
 .About__container {
   width: 460px;
   padding: 40px;
-  border: 1px solid #505050;
   border-radius: 2px;
   font-size: 16px;
 }
 
 .About__text {
-  font-family: sans-serif;
   line-height: 140%;
   font-weight: 300;
 }
