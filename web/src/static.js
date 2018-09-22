@@ -99,7 +99,7 @@ var data = {
 
   commonProd: [
     '/build/common.js',
-    '/build/common.css'
+    '/build/common.css?2'
   ],
 
   adminProd: [

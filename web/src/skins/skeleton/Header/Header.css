@@ -4,7 +4,7 @@
   align-items: center;
   background: rgba(255, 255, 255, 0.7);
   position: relative;
-  height: 62px;
+  height: 86px;
 }
 
 .Header__center {
@@ -34,6 +34,7 @@
 }*/
 
 .Header:after {
+  display: none;
   content: '';
   position: absolute;
   bottom: -3px;
@@ -64,9 +65,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #444;
+  color: #000;
   margin-top: 3px;
   letter-spacing: 1.3px;
+  font-weight: 600;
 
   /*position: absolute;
   left: 50%;
@@ -136,9 +138,9 @@
   padding: 22px 38px;
   outline: none;
   text-decoration: none;
-  color: #111;
   outline: none;
-  color: #444;
+  color: #000;
+  font-weight: 400;
 }
 .Header__menuItem:first-child {
   padding-left: 24px;

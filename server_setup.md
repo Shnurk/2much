@@ -1,5 +1,3 @@
-38
-
 ## Create user
 
 > adduser imkost
