@@ -100,18 +100,22 @@ function buildContent (props) {
 
     case 'models':
       const persons = props.persons
-      return persons.map(p => {
-        const { height, chest, waist, hips } = p.params
-        return skin.modelCard.render({
-          url: `/models/${p.slug}`,
-          name: p.name,
-          photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
-          height: { cm: height, inch: cmToInches(height) },
-          chest: { cm: chest, inch: cmToInches(chest) },
-          waist: { cm: waist, inch: cmToInches(waist) },
-          hips: { cm: hips, inch: cmToInches(hips) },
-        })
-      }).join('')
+      return `
+        <div class="models">
+          ${persons.map(p => {
+            const { height, chest, waist, hips } = p.params
+            return skin.modelCard.render({
+              url: `/models/${p.slug}`,
+              name: p.name,
+              photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
+              height: { cm: height, inch: cmToInches(height) },
+              chest: { cm: chest, inch: cmToInches(chest) },
+              waist: { cm: waist, inch: cmToInches(waist) },
+              hips: { cm: hips, inch: cmToInches(hips) },
+            })
+          }).join('')}
+        </div>
+      `
       break
 
     case 'model':
