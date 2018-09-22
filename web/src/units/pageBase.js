@@ -20,6 +20,7 @@ function buildBasePage (props) {
   return skin.page.render({
     js: props.js,
     css: props.css,
+    class: props.type,
     withMetrika: global.isProd,
     title: 'AGAINST MANAGEMENT',
     body: skin.layout.render({
@@ -100,22 +101,18 @@ function buildContent (props) {
 
     case 'models':
       const persons = props.persons
-      return `
-        <div class="models">
-          ${persons.map(p => {
-            const { height, chest, waist, hips } = p.params
-            return skin.modelCard.render({
-              url: `/models/${p.slug}`,
-              name: p.name,
-              photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
-              height: { cm: height, inch: cmToInches(height) },
-              chest: { cm: chest, inch: cmToInches(chest) },
-              waist: { cm: waist, inch: cmToInches(waist) },
-              hips: { cm: hips, inch: cmToInches(hips) },
-            })
-          }).join('')}
-        </div>
-      `
+      return persons.map(p => {
+        const { height, chest, waist, hips } = p.params
+        return skin.modelCard.render({
+          url: `/models/${p.slug}`,
+          name: p.name,
+          photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
+          height: { cm: height, inch: cmToInches(height) },
+          chest: { cm: chest, inch: cmToInches(chest) },
+          waist: { cm: waist, inch: cmToInches(waist) },
+          hips: { cm: hips, inch: cmToInches(hips) },
+        })
+      }).join('')
       break
 
     case 'model':

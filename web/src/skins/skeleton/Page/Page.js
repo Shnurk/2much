@@ -21,7 +21,7 @@ function renderPage (props, children = '') {
 
   return (
     '<!doctype html>' +
-    Brick.render({ tag: 'html', class: 'Page' }, [
+    Brick.render({ tag: 'html', class: `Page Page_${props.class}` }, [
       `
       <!-- for Google -->
       <meta name="description" content="Модельное агентство в Санкт-Петербурге"/>

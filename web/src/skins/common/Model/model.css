@@ -1,9 +1,3 @@
-.models {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .model {
   margin: 0 20px 0;
   display: flex;
