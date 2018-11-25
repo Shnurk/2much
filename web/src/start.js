@@ -31,7 +31,7 @@ var config = {
       '/': './src/',
       '/media': './media/',
       '/images': './images/',
-      '/pdf': './pdf/',
+      // '/pdf': './pdf/',
     }
     : {
       '/media': './media/',

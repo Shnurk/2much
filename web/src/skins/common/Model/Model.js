@@ -41,7 +41,7 @@ function renderModel(props) {
         <a href="${props.bookUrl}" class="model__menuItem">book</a>
         <a href="${props.polaroidsUrl}" class="model__menuItem">polaroids</a>
         <a href="${props.instagramUrl}" target="_blank" class="model__menuItem">instagram</a>
-        <a href="${props.pdfUrl}" class="model__menuItem" target="_blank">pdf</a>
+        ${'' && `<a href="${props.pdfUrl}" class="model__menuItem" target="_blank">pdf</a>`}
       </div>
 
       <div class="model__book">
