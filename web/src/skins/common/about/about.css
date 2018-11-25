@@ -31,4 +31,24 @@
 .About__text {
   line-height: 140%;
   font-weight: 300;
+  text-align: justify;
+}
+
+.About__contacts {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.About__contactsLine {
+  margin-top: 5px;
+}
+
+.About__contactsLine_city {
+  font-weight: 700;
+}
+
+.About__email {
+  color: #222;
+  font-weight: 300;
+  text-align: center;
 }

@@ -23,15 +23,28 @@ function renderContact () {
 }
 
 var title = 'Against Model Management'
-var email = 'hello@againstmanagement.com'
+var emailBoys = 'boys@againstmanagement.com'
+var emailGirls = 'girls@againstmanagement.com'
 var paragraphs = `
-  We are the model agency from Saint-Petersburg, Russia.
+  We are team based in Saint-Petersburg, Russia that is scouting and developing exclusive young talents.
 
-  Our main idea is a friendly relationship between booker’s team and models.
-  We are always glad to meet up models, stylists, photographers, and agencies
-  all around the world. And we think this information is enough :)
+  Our main concept is to build and lead modelling career at all main fashion markets while focusing on promoting and growing personality. Welcome to work with us to make statement together.
 
-  <a class="Contacts__email" href="mailto:${email}">${email}</a>
+  <div class="About__contacts">
+    <div class="About__contactsLine About__contactsLine_city">
+      Saint Petersburg
+    </div>
+    <div class="About__contactsLine">
+      Naberezhnaia Reki Moiki 9
+    </div>
+    <div class="About__contactsLine">
+      <a class="About__email" href="mailto:${emailBoys}">${emailBoys}</a>
+    </div>
+    <div class="About__contactsLine">
+      <a class="About__email" href="mailto:${emailGirls}">${emailGirls}</a>
+    </div>
+  </div>
+
 `
 
 // function renderContact (props) {
