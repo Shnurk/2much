@@ -95,7 +95,23 @@ async function article (req, res) {
 async function main (req, res) {
   var persons = await db.person.getAll()
   persons = persons.reverse().filter(p => !p.hidden)
-  var page = unit.page.build({ js, css, type: 'models', persons })
+
+  const boys = [];
+  const girls = [];
+  persons.forEach(person => {
+    if (person.gender === 0) {
+      girls.push(person)
+    } else if (person.gender === 1) {
+      boys.push(person)
+    }
+  })
+
+  var page = unit.page.build({
+    js,
+    css,
+    type: 'models',
+    persons: [].concat(boys, girls)
+  })
   res.end(page)
 }
 async function models (req, res) {

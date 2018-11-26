@@ -39,6 +39,10 @@ function renderPage (props, children = '') {
       <meta name="twitter:title" content="AGAINST MANAGEMENT"/>
       <meta name="twitter:description" content="Модельное агентство в Санкт-Петербурге"/>
       <meta name="twitter:image" content=""/>
+
+      <!-- Font -->
+      <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600" rel="stylesheet">
+
       `,
       Brick.render({ tag: 'head' }, [
         Brick.render({ tag: 'meta', charset: 'utf-8' }),

@@ -38,10 +38,10 @@ var paragraphs = `
       Naberezhnaia Reki Moiki 9
     </div>
     <div class="About__contactsLine">
-      <a class="About__email" href="mailto:${emailBoys}">${emailBoys}</a>
-    </div>
-    <div class="About__contactsLine">
       <a class="About__email" href="mailto:${emailGirls}">${emailGirls}</a>
+    </div>
+    <div class="About__contactsLine About__contactsLine_lastEmail">
+      <a class="About__email" href="mailto:${emailBoys}">${emailBoys}</a>
     </div>
   </div>
 
