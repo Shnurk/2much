@@ -83,8 +83,8 @@
   bottom: 5px;
   color: #fff;
 
-  opacity: 0;
-  transform: translateY(60px);
+  /*opacity: 0;*/
+  /*transform: translateY(60px);*/
   transition: all 0.2s ease;
 }
 .modelCard:hover .modelCard__params {
@@ -94,16 +94,30 @@
 
 
 .modelCard__height {
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 
 .modelCard__measures {
-  display: flex;
   font-size: 14px;
-  width: 100%;
-  justify-content: space-around;
+  border-collapse: collapse;
+  border: none;
 }
 
-
 .modelCard__measure {
+}
+
+.modelCard__measureCell {
+  border: none;
+  padding: 2px 4px;
+}
+
+.modelCard__measureCell:first-child {
+  text-align: right;
+}
+
+.modelCard__divider {
+  opacity: 0.5;
+  margin: 0 2px;
 }

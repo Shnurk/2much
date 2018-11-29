@@ -38,40 +38,81 @@ function renderModelCard(props) {
             // Height
             {
               class: 'modelCard__height',
-              inner: raw(`${props.height.cm} / ${props.height.inch}`)
+              inner: [
+                { tag: 'span', inner: raw(props.height.cm) },
+                { tag: 'span', class: 'modelCard__divider', inner: '/' },
+                { tag: 'span', inner: raw(props.height.inch) }
+              ]
             },
 
             // Other measures
             {
+              tag: 'table',
               class: 'modelCard__measures',
               inner: [
                 // Chest
                 {
+                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
-                    { class: 'modelCard__measureCell', inner: 'chest' },
-                    { class: 'modelCard__measureCell', inner: raw(props.chest.cm) },
-                    { class: 'modelCard__measureCell', inner: raw(props.chest.inch) }
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: 'chest:'
+                    },
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: [
+                        { tag: 'span', inner: raw(props.chest.cm) },
+                        { tag: 'span', class: 'modelCard__divider', inner: '/' },
+                        { tag: 'span', inner: raw(props.chest.inch) }
+                      ]
+                    },
                   ]
                 },
 
                 // Waist
                 {
+                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
-                    { class: 'modelCard__measureCell', inner: 'waist' },
-                    { class: 'modelCard__measureCell', inner: raw(props.waist.cm) },
-                    { class: 'modelCard__measureCell', inner: raw(props.waist.inch) }
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: 'waist:'
+                    },
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: [
+                        { tag: 'span', inner: raw(props.waist.cm) },
+                        { tag: 'span', class: 'modelCard__divider', inner: '/' },
+                        { tag: 'span', inner: raw(props.waist.inch) }
+                      ]
+                    },
                   ]
                 },
 
                 // Hips
                 {
+                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
-                    { class: 'modelCard__measureCell', inner: 'hips' },
-                    { class: 'modelCard__measureCell', inner: raw(props.hips.cm) },
-                    { class: 'modelCard__measureCell', inner: raw(props.hips.inch) }
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: 'hips:'
+                    },
+                    {
+                      tag: 'td',
+                      class: 'modelCard__measureCell',
+                      inner: [
+                        { tag: 'span', inner: raw(props.hips.cm) },
+                        { tag: 'span', class: 'modelCard__divider', inner: '/' },
+                        { tag: 'span', inner: raw(props.hips.inch) }
+                      ]
+                    },
                   ]
                 },
               ]
