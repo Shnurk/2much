@@ -81,9 +81,7 @@
   left: 5px;
   right: 5px;
   bottom: 5px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
-  color: #111;
+  color: #fff;
 
   opacity: 0;
   transform: translateY(60px);
