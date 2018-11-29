@@ -21,6 +21,7 @@ global.Epos = {
 }
 
 module.exports.generateHtml = html
+module.exports.raw = rawHtml
 
 function dynamic (value) {
   const self = dynamic

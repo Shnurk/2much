@@ -33,7 +33,7 @@ var data = {
     '/skins/common/Contact/Contact.js',
     '/skins/common/News/News.js',
     '/skins/common/Slider/Slider.js',
-    '/skins/common/Model/Model.js',
+    '/skins/common/model2/model.js',
     '/skins/common/NewsItem/NewsItem.js',
     '/skins/common/Intro/Intro.js',
 
@@ -67,7 +67,7 @@ var data = {
     '/skins/common/News/News.css',
     '/skins/common/Slider/slider.css',
     '/skins/common/Slider/slider_logic.js',
-    '/skins/common/model/model.css',
+    '/skins/common/model2/model.css',
     '/skins/common/NewsItem/newsItem.css',
     '/skins/common/Intro/intro.css',
     '/skins/common/Intro/intro_0.js',

@@ -2,6 +2,8 @@
 /* global skin */
 /* global unit */
 
+const {generateHtml, raw} = require('../lib/epos.js')
+
 ;(() => {
 
 unit.page = {
@@ -100,19 +102,40 @@ function buildContent (props) {
       })
 
     case 'models':
-      const persons = props.persons
-      return persons.map(p => {
-        const { height, chest, waist, hips } = p.params
-        return skin.modelCard.render({
-          url: `/models/${p.slug}`,
-          name: p.name,
-          photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
-          height: { cm: height, inch: cmToInches(height) },
-          chest: { cm: chest, inch: cmToInches(chest) },
-          waist: { cm: waist, inch: cmToInches(waist) },
-          hips: { cm: hips, inch: cmToInches(hips) },
-        })
-      }).join('')
+      return generateHtml({
+        class: 'modelBlocks',
+        inner: [
+          renderModelBlock('Boys', props.boys),
+          renderModelBlock('Girls', props.girls)
+        ]
+      })
+
+      function renderModelBlock (title, persons) {
+        return {
+          class: 'modelBlock',
+          inner: [
+            {
+              class: 'modelBlock__title',
+              inner: title
+            },
+            {
+              class: 'modelBlock__models',
+              inner: raw(persons.map(p => {
+                const { height, chest, waist, hips } = p.params
+                return skin.modelCard.render({
+                  url: `/models/${p.slug}`,
+                  name: p.name,
+                  photo: p.cover ? `/media/large/${p.cover.fileName}` : null,
+                  height: { cm: height, inch: cmToInches(height) },
+                  chest: { cm: chest, inch: cmToInches(chest) },
+                  waist: { cm: waist, inch: cmToInches(waist) },
+                  hips: { cm: hips, inch: cmToInches(hips) },
+                })
+              }).join(''))
+            }
+          ]
+        }
+      }
       break
 
     case 'model':

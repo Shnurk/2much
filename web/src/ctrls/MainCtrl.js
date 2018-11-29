@@ -20,7 +20,7 @@ var MainCtrl = module.exports = {
     app.get('/', main)
     app.get('/news', news)
     app.get('/news/:slug', article)
-    app.get('/models', models)
+    app.get('/models', main)
     app.get('/models/:slug', model)
     app.get('/models/:slug/polaroids', modelPolaroids)
     app.get('/models/:slug/pdf', modelPdf)
@@ -110,7 +110,8 @@ async function main (req, res) {
     js,
     css,
     type: 'models',
-    persons: [].concat(boys, girls)
+    boys,
+    girls
   })
   res.end(page)
 }
