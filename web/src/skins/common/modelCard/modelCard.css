@@ -9,7 +9,7 @@
 }
 
 .modelBlock {
-  margin-bottom: 70px;
+  margin-bottom: 120px;
 }
 
 .modelBlock__title {
@@ -18,10 +18,12 @@
   font-weight: 600;
   letter-spacing: 1.3px;
   margin-bottom: 15px;
+  margin-left: 25px;
 }
 
 .modelBlock__models {
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*******************************************************************************
