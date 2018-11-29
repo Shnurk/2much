@@ -1,0 +1,33 @@
+.Link {
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  font-weight: 400;
+}
+
+/* Underline */
+.Link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  border-bottom: 1px solid #000;
+  transform: scaleY(0.5);
+  opacity: 0.2;
+  transition: opacity 0.3s;
+}
+.Link:hover::before {
+  opacity: 1;
+}
+
+/* Hitbox */
+.Link::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+}

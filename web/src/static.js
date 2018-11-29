@@ -58,6 +58,7 @@ var data = {
     '/lib/dollarselector.js',
     '/lib/resumable/resumable.js',
 
+    '/skins/base/Link.css',
     '/skins/skeleton/Footer/Footer.css',
     '/skins/skeleton/Header/Header.css',
     '/skins/skeleton/Layout/Layout.css',

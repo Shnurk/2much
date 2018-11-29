@@ -1,65 +1,41 @@
 .model {
-  margin: 0 20px 0;
+  margin: 40px 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .model__name {
-  display: flex;
-  justify-content: center;
-  letter-spacing: .5px;
-}
-
-.model__firstname {
-  margin-right: 10px;
-  font-size: 25px;
-  font-weight: 400;
-}
-
-.safari .model__firstname {
-  font-weight: 300;
-}
-
-.model__lastname {
-  font-size: 25px;
+  color: #000;
+  font-size: 16px;
   font-weight: 600;
-
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
 .model__menu {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .model__menuItem {
   outline: none;
-  text-decoration: none;
   color: #111;
-  padding: 10px;
+  margin: 10px;
 }
 
-.model__menuItem:after {
-  content: '';
-  display: inline-block;
-  margin-left: 20px;
-  margin-bottom: 2px;
-  width: 5px;
-  height: 5px;
+.model__dot {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 3px;
+  height: 3px;
   background: #505050;
   border-radius: 50%;
 }
 
-.model__menuItem:last-child:after {
-display: none;
-}
-
 .menu__active {
-  color: #f8cc9d;
-}
-
-.model__menuItem:hover {
   color: #f8cc9d;
 }
 

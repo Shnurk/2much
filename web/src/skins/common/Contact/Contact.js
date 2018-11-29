@@ -26,9 +26,9 @@ var title = 'Against Model Management'
 var emailBoys = 'boys@againstmanagement.com'
 var emailGirls = 'girls@againstmanagement.com'
 var paragraphs = `
-  We are team based in Saint-Petersburg, Russia that is scouting and developing exclusive young talents.
+  We are a team based in Saint-Petersburg, Russia that is scouting and developing exclusive young talents.
 
-  Our main concept is to build and lead modelling career at all main fashion markets while focusing on promoting and growing personality. Welcome to work with us to make statement together.
+  Our main concept is to build and lead modelling career while focusing on promoting and growing personality. Welcome to work with us to make a statement together.
 
   <div class="About__contacts">
     <div class="About__contactsLine About__contactsLine_city">

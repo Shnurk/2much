@@ -34,13 +34,15 @@ function renderModel(props) {
   return `
     <div class="model">
       <div class="model__name">
-        <span class="model__firstname">${props.name}</span>
+        ${props.name}
       </div>
 
       <div class="model__menu">
-        <a href="${props.bookUrl}" class="model__menuItem">book</a>
-        <a href="${props.polaroidsUrl}" class="model__menuItem">polaroids</a>
-        <a href="${props.instagramUrl}" target="_blank" class="model__menuItem">instagram</a>
+        <a href="${props.bookUrl}" class="model__menuItem Link">book</a>
+        <span class="model__dot"></span>
+        <a href="${props.polaroidsUrl}" class="model__menuItem Link">polaroids</a>
+        <span class="model__dot"></span>
+        <a href="${props.instagramUrl}" target="_blank" class="model__menuItem Link">instagram</a>
         ${'' && `<a href="${props.pdfUrl}" class="model__menuItem" target="_blank">pdf</a>`}
       </div>
 
