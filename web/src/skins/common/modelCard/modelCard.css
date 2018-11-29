@@ -72,24 +72,18 @@
 
 .modelCard__params {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   position: absolute;
-  top: 60%;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  flex-direction: column;
+  align-items: center;
   color: #fff;
-
-  /*opacity: 0;*/
-  /*transform: translateY(60px);*/
-  transition: all 0.2s ease;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 .modelCard:hover .modelCard__params {
   opacity: 1;
-  transform: translateY(0);
 }
 
 
@@ -101,11 +95,15 @@
 
 .modelCard__measures {
   font-size: 14px;
-  border-collapse: collapse;
-  border: none;
 }
 
 .modelCard__measure {
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.modelCard__measure:last-child {
+  margin-bottom: 0;
 }
 
 .modelCard__measureCell {
@@ -114,10 +112,14 @@
 }
 
 .modelCard__measureCell:first-child {
+  width: 50px;
   text-align: right;
 }
 
 .modelCard__divider {
   opacity: 0.5;
   margin: 0 2px;
+  transform: scale(0.9);
+  display: inline-block;
+  transform-origin: center;
 }

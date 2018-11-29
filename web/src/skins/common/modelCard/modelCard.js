@@ -47,21 +47,17 @@ function renderModelCard(props) {
 
             // Other measures
             {
-              tag: 'table',
               class: 'modelCard__measures',
               inner: [
                 // Chest
                 {
-                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: 'chest:'
                     },
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: [
                         { tag: 'span', inner: raw(props.chest.cm) },
@@ -74,16 +70,13 @@ function renderModelCard(props) {
 
                 // Waist
                 {
-                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: 'waist:'
                     },
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: [
                         { tag: 'span', inner: raw(props.waist.cm) },
@@ -96,16 +89,13 @@ function renderModelCard(props) {
 
                 // Hips
                 {
-                  tag: 'tr',
                   class: 'modelCard__measure',
                   inner: [
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: 'hips:'
                     },
                     {
-                      tag: 'td',
                       class: 'modelCard__measureCell',
                       inner: [
                         { tag: 'span', inner: raw(props.hips.cm) },
