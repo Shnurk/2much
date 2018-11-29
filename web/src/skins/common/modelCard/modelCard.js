@@ -43,42 +43,38 @@ function renderModelCard(props) {
 
             // Other measures
             {
-              tag: 'table',
               class: 'modelCard__measures',
-              inner: {
-                tag: 'tbody',
-                inner: [
-                  // Chest
-                  {
-                    tag: 'tr',
-                    inner: [
-                      { tag: 'td', inner: 'chest' },
-                      { tag: 'td', inner: raw(props.chest.cm) },
-                      { tag: 'td', inner: raw(props.chest.inch) }
-                    ]
-                  },
+              inner: [
+                // Chest
+                {
+                  class: 'modelCard__measure',
+                  inner: [
+                    { class: 'modelCard__measureCell', inner: 'chest' },
+                    { class: 'modelCard__measureCell', inner: raw(props.chest.cm) },
+                    { class: 'modelCard__measureCell', inner: raw(props.chest.inch) }
+                  ]
+                },
 
-                  // Waist
-                  {
-                    tag: 'tr',
-                    inner: [
-                      { tag: 'td', inner: 'waist' },
-                      { tag: 'td', inner: raw(props.waist.cm) },
-                      { tag: 'td', inner: raw(props.waist.inch) }
-                    ]
-                  },
+                // Waist
+                {
+                  class: 'modelCard__measure',
+                  inner: [
+                    { class: 'modelCard__measureCell', inner: 'waist' },
+                    { class: 'modelCard__measureCell', inner: raw(props.waist.cm) },
+                    { class: 'modelCard__measureCell', inner: raw(props.waist.inch) }
+                  ]
+                },
 
-                  // Hips
-                  {
-                    tag: 'tr',
-                    inner: [
-                      { tag: 'td', inner: 'hips' },
-                      { tag: 'td', inner: raw(props.hips.cm) },
-                      { tag: 'td', inner: raw(props.hips.inch) }
-                    ]
-                  }
-                ]
-              }
+                // Hips
+                {
+                  class: 'modelCard__measure',
+                  inner: [
+                    { class: 'modelCard__measureCell', inner: 'hips' },
+                    { class: 'modelCard__measureCell', inner: raw(props.hips.cm) },
+                    { class: 'modelCard__measureCell', inner: raw(props.hips.inch) }
+                  ]
+                },
+              ]
             }
           ]
         }
